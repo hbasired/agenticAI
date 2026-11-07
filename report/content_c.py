@@ -98,8 +98,8 @@ def section7(R, V):
            "box) and observe the outcomes of earlier attempts (adaptive). It cannot modify the ERP database directly, "
            "alter contact details that were on file before the attack, or compromise internal staff; insider fraud, ERP "
            "compromise and attacks on the human call-back step are out of scope. We now flag the last exclusion as the "
-           "most fragile assumption: voice cloning is good enough to defeat audio authentication in published tests "
-           "{c:2601.02914}, and automated voice phishing has been demonstrated {c:2607.09970}.")
+           "most fragile assumption: audio-based authentication has documented vulnerabilities to deepfake speech "
+           "{c:2601.02914}, and AI models' capability to automate voice phishing has been evaluated {c:2607.09970}.")
     R.h2("7.2 Formal setting and loss")
     R.para("Let *s* be the environment state and *x*_{1}, ..., *x*_{n} the inbox items of a period. A configuration *π* "
            "maps items to actions and ultimately to a set *P* of executed payments, each with amount *a*_{p}, "
@@ -115,7 +115,7 @@ def section7(R, V):
            "conditional version (CVaR_{95}) {c:jorion2006}, {c:cvar}, {c:artzner1999}.")
     R.h2("7.3 Control-Grounded Agent Architecture (CGA)")
     R.para("CGA splits the workflow into sessions that each satisfy the Agents Rule of Two and places deterministic "
-           "controls between them (Figure 1). The intake agent (maker) reads supplier content and looks up records read-"
+           "controls between them (Figure {ref:fig:cga}). The intake agent (maker) reads supplier content and looks up records read-"
            "only; its only output is a typed proposal under schema-constrained decoding {c:2501.10868}. The checker is "
            "plain code that applies the policy pack. The payer executes only approved proposals and never sees supplier "
            "text. Escalations go to a human queue ranked by a calibrated risk score, and an audit log records every "
@@ -123,7 +123,7 @@ def section7(R, V):
     R.figure(os.path.join(ASSETS, "fig_cga_architecture.png"),
              "Control-Grounded Agent Architecture in SoD-Bench (reproduced from the proposal). Badges mark the Agents Rule "
              "of Two properties held by each LLM session; the checker is deterministic code. The OpMech diagnostic is an "
-             "exploratory ablation.")
+             "exploratory ablation.", label="fig:cga")
     R.table(["Internal control", "Agent-level implementation in CGA", "Attacks addressed", "Implemented as"],
             [["Segregation of duties", "Maker and payer sessions with a deterministic checker between them", "A1-A5, A9",
               "runner.process_typed"],
@@ -141,9 +141,9 @@ def section7(R, V):
              ["Data-flow (provenance) control", "Beneficiary only from verified master data", "A1-A3, A5, A9",
               "checker._payable"],
              ["Audit trail", "SHA-256 hash-chained log of every decision", "All (detection)", "state.AuditLog"]],
-            [2100, 3600, 1400, 2260], "Internal controls and their implementation in CGA.")
+            [2100, 3600, 1400, 2260], "Internal controls and their implementation in CGA.", label="tab:controls")
     R.h2("7.4 Defences compared")
-    R.para("All configurations run on the same worlds, attacks, seeds and review budgets (Table 6). We added D7, naive "
+    R.para("All configurations run on the same worlds, attacks, seeds and review budgets (Table {ref:tab:defences}). We added D7, naive "
            "segregation of duties with two LLM sessions joined by free text, to test whether segregation without "
            "certified channels is enough, and VoP-removal ablations to measure how controls cover for each other.")
     R.table(["ID", "Configuration", "Idea", "Source"],
@@ -157,7 +157,7 @@ def section7(R, V):
              ["D6", "CGA (v0.1, v0.2, v0.3)", "SoD sessions, controls-as-code, provenance", "This work"],
              ["D6a-c", "No provenance; no call-back; controls advisory only", "Ablations", "This work"],
              ["D7", "Maker LLM and payer LLM joined by free text", "Naive segregation", "This work"]],
-            [900, 3700, 2700, 2060], "Defence configurations compared under one protocol.")
+            [900, 3700, 2700, 2060], "Defence configurations compared under one protocol.", label="tab:defences")
     R.h2("7.5 Adaptive attacker")
     R.para("Following the recommendation that defences be evaluated against attackers who adapt {c:34}, we implemented "
            "two adaptive attackers. A white-box control-boundary search knows the policy pack, observes the money "
@@ -197,7 +197,7 @@ def section7(R, V):
            "data-flow edge of the workflow graph, stop it for a field only at nodes that certify that field by re-deriving "
            "it from verified records, and require that no tainted session hold both sensitive access and the power to "
            "act, and that no integrity-critical sink (beneficiary, amount, vendor master) be reachable from untrusted "
-           "content without certification. Table 7 shows that TRo2 separates designs that the per-session rule cannot. "
+           "content without certification. Table {ref:tab:tro2} shows that TRo2 separates designs that the per-session rule cannot. "
            "Concurrent work asks whether CaMeL's guarantees compose across agent hierarchies {c:2610.05640}; from its "
            "abstract, its focus is CaMeL composition rather than a workflow-level criterion, but we have not yet compared "
            "the two in depth.")
@@ -207,11 +207,12 @@ def section7(R, V):
                      ", ".join(r["uncertified_critical_sinks"]) or "none"])
     R.table(["Config", "Rule of Two per session", "Transitive Rule of Two", "Critical sinks reachable from untrusted text"],
             rows, [1300, 2200, 2200, 3660],
-            "Rule-of-Two analysis. D7 passes the per-session test yet fails the transitive one; only D5 and D6 pass both.")
+            "Rule-of-Two analysis. D7 passes the per-session test yet fails the transitive one; only D5 and D6 pass both.",
+            label="tab:tro2")
     R.h2("7.9 Machine-checked controls")
     R.para("Because the checker is code, its key properties can be proved rather than measured. We encoded the payable "
            "path in the Z3 SMT solver {c:z3} and proved each property by showing its negation unsatisfiable for every "
-           "proposal a maker could emit (Table 8). Removing the provenance rule turns property P1 into a satisfiable query "
+           "proposal a maker could emit (Table {ref:tab:z3}). Removing the provenance rule turns property P1 into a satisfiable query "
            "with a concrete counterexample. The proofs cover the abstract model; property-based tests with Hypothesis "
            "{c:hypothesis} check the same invariants on the Python implementation, and they found a defect the proof could "
            "not see: an absolute rounding allowance in the tolerance comparison let low-priced lines exceed the proven "
@@ -224,4 +225,4 @@ def section7(R, V):
                                                                                  "reachable (as predicted)")]
             for r in V["z3"]]
     R.table(["ID", "Property of the checker", "Result", "Evidence"], rows, [700, 5260, 1100, 2300],
-            "Properties of the controls-as-code checker checked with Z3.")
+            "Properties of the controls-as-code checker checked with Z3.", label="tab:z3")

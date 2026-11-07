@@ -50,7 +50,7 @@ def section8(R, V):
              ["Order-gap AUC", "Detection quality of the OpMech diagnostic (exploratory)", "Answers RQ6"]],
             [2300, 4300, 2760], "Evaluation metrics.")
     R.h2("8.3 Source-reported reference points")
-    R.para("Table 10 collects published results that frame expectations. None is a result of this project, and the "
+    R.para("Table {ref:tab:source} collects published results that frame expectations. None is a result of this project, and the "
            "environments differ from SoD-Bench; where we use one as a benchmark target (Section 8.4) we say so and treat "
            "the comparison as indicative only.")
     R.table(["Source", "Setting", "Reported result (source-reported)", "Use here"],
@@ -62,7 +62,7 @@ def section8(R, V):
              ["FraudBench {c:7}", "Banking agent vs adaptive caller", "Attack security 49-65 %", "Benchmark X5"],
              ["APort Vault {c:2609.22076}", "Payment agent, replayed CTF attacks", "Outcome rates vary more across configurations than models",
               "Context for RQ2"]],
-            [1900, 1900, 3360, 2200], "Prior results are source-reported and are not project results.")
+            [1900, 1900, 3360, 2200], "Prior results are source-reported and are not project results.", label="tab:source")
     _benchmarks_definition(R, V)
     _arch_results(R, V)
     _pilot_results(R, V)
@@ -97,7 +97,7 @@ def _benchmarks_definition(R, V):
 
 def _arch_results(R, V):
     R.h2("8.5 Interim results: architectural tier")
-    R.para("Table 12 reports the main grid. The undefended agent with a compromised model (s = 1) diverts "
+    R.para("Table {ref:tab:arch} reports the main grid. The undefended agent with a compromised model (s = 1) diverts "
            f"{aed(g(V, 'D0', 1.0, 'DV'))} per twelve-week period (95 % CI {aed(V['grid_ci'][('D0', 1.0)][0])} to "
            f"{aed(V['grid_ci'][('D0', 1.0)][1])}); CGA v0.1 diverts {aed(g(V, 'D6', 1.0, 'DV'))} (CI "
            f"{aed(V['grid_ci'][('D6', 1.0)][0])} to {aed(V['grid_ci'][('D6', 1.0)][1])}), a reduction of "
@@ -114,32 +114,34 @@ def _arch_results(R, V):
     R.table(["Configuration", "DV, s = 1", "ASR, s = 1", "STP, s = 1", "FHR, s = 1", "DV, s = 0.5", "Reviews/day"],
             rows, [2500, 1150, 1050, 1050, 1050, 1300, 1260],
             "Architectural tier [A]: means over held-out-split worlds, 3 % prevalence, twelve-week periods. D1 rows use "
-            "an assumed effect size (60 % static, 10 % adaptive reduction of susceptibility on injection families).")
+            "an assumed effect size (60 % static, 10 % adaptive reduction of susceptibility on injection families).",
+            label="tab:arch")
     R.figure(os.path.join(FIG, "fig_susceptibility.png"),
              "Diverted value against model susceptibility s [A]. Bands are 95 % bootstrap intervals across worlds. CGA is "
-             "nearly flat: its worst case is a bound that does not depend on the model.")
-    R.para("The susceptibility curves (Figure 2) are the central new result. Every design whose safety depends on the "
+             "nearly flat: its worst case is a bound that does not depend on the model.", label="fig:susc")
+    R.para("The susceptibility curves (Figure {ref:fig:susc}) are the central new result. Every design whose safety depends on the "
            "model grows roughly in proportion to s; CGA stays between "
            f"{aed(min(g(V, 'D6', s, 'DV') for s in (0.1, 0.25, 0.5, 0.75, 1.0)))} and "
-           f"{aed(max(g(V, 'D6', s, 'DV') for s in (0.1, 0.25, 0.5, 0.75, 1.0)))} from s = 0.1 to 1. Figure 3 shows where "
+           f"{aed(max(g(V, 'D6', s, 'DV') for s in (0.1, 0.25, 0.5, 0.75, 1.0)))} from s = 0.1 to 1. Figure {ref:fig:heat} shows where "
            "losses arise. The undefended and naive designs lose to every family; tool filtering removes direct vendor-"
            "master updates but leaves in-document account redirection and the note channel of A9; the CaMeL-style design "
            "loses only to duplicates and inflation; and CGA's residual is confined to within-tolerance overpayment.")
     R.figure(os.path.join(FIG, "fig_family_heatmap.png"),
              "Worst-case loss by attack family and configuration in attack-dense worlds [A]. Cells give the mean loss per "
-             "world; zero means no gain for the attacker.")
+             "world; zero means no gain for the attacker.", label="fig:heat")
     R.figure(os.path.join(FIG, "fig_pareto.png"),
-             "Automation value against loss at s = 0.5 [A]. CGA is the only design in the high-STP, low-loss corner.")
-    R.para("Controls cover for each other in pairs (Figure 5). Removing provenance, call-back or VoP alone leaves CGA's "
+             "Automation value against loss at s = 0.5 [A]. CGA is the only design in the high-STP, low-loss corner.",
+             label="fig:pareto")
+    R.para("Controls cover for each other in pairs (Figure {ref:fig:abl}). Removing provenance, call-back or VoP alone leaves CGA's "
            "loss unchanged, because Verification of Payee catches a wrong account even when master data is poisoned and "
            "provenance blocks a document account even without VoP. Removing provenance and VoP together exposes "
            f"{aed(g(V, 'D6a-noVoP', 1.0, 'DV'))}; removing call-back and VoP together exposes "
            f"{aed(g(V, 'D6b-noVoP', 0.0, 'DV'))} even with a faithful maker, because faithfully reported bank-change "
            "requests are then applied automatically. This is defence in depth in the sense of the Swiss-cheese model "
-           "{c:reason2000}, and the transitive Rule-of-Two analysis (Table 7) predicts which removals open which sinks.")
+           "{c:reason2000}, and the transitive Rule-of-Two analysis (Table {ref:tab:tro2}) predicts which removals open which sinks.")
     R.figure(os.path.join(FIG, "fig_ablation.png"),
              "Control redundancy [A]: diverted value when CGA controls are removed singly and in pairs, for a faithful "
-             "(s = 0) and a compromised (s = 1) maker.")
+             "(s = 0) and a compromised (s = 1) maker.", label="fig:abl")
     dv = V["dvar"]
     cal = V["calibration"]
     sw = V["sweeps"]
@@ -154,9 +156,9 @@ def _arch_results(R, V):
            f"flags {pct(cal['heldout_benign_flag_rate'])} of held-out benign items while catching "
            f"{pct(cal['heldout_attack_recall_at_threshold'])} of attacks. Triage on the model's own risk estimate, by "
            "contrast, does nothing once the model is compromised: Loss@B for D0 and D4 is identical at B = 2, 5 and 10 "
-           "percent (Figure 6), because a deceived agent reports low risk.")
+           "percent (Figure {ref:fig:budget}), because a deceived agent reports low risk.")
     R.figure(os.path.join(FIG, "fig_budget.png"),
-             "Loss@B against the daily review budget at s = 1 [A], with pre-payment triage on and off.")
+             "Loss@B against the daily review budget at s = 1 [A], with pre-payment triage on and off.", label="fig:budget")
     R.para("Structured e-invoicing helps but does not close the gap (RQ4). With all suppliers on UBL, the undefended "
            f"agent's loss at s = 1 falls from {aed(ch[('D0', 1.0, 'pdf')]['DV'])} to {aed(ch[('D0', 1.0, 'ubl')]['DV'])}, "
            "because layout attacks (A1) disappear, while free-text fields keep the injection channel open. Human reviewers "
@@ -206,7 +208,7 @@ def _pilot_results(R, V):
     R.table(["Configuration (Qwen3.5-4B)", "Attack items", "ASR [95 % Wilson CI]", "Attacker gain", "False holds / legit"],
             rows, [3000, 1200, 2160, 1500, 1500],
             "Real-LLM pilot [P]: attacker gain includes future payments diverted by a poisoned vendor record within the "
-            "detection lag.")
+            "detection lag.", label="tab:pilot")
     fam = pb.get("D0_families", {})
     worst = sorted(fam.items(), key=lambda kv: -kv[1]["succ"] / max(1, kv[1]["n"]))
     fam_txt = "; ".join(f"{k} {v['succ']}/{v['n']}" for k, v in sorted(fam.items()))
@@ -230,7 +232,8 @@ def _pilot_results(R, V):
     if os.path.exists(os.path.join(FIG, "fig_llm_pilot.png")):
         R.figure(os.path.join(FIG, "fig_llm_pilot.png"),
                  "Real-LLM pilot [P]: share of attack items on which the attacker's goal was achieved, by family and "
-                 "configuration (Qwen3.5-4B, CPU). Small samples; see Table 13 for intervals.")
+                 "configuration (Qwen3.5-4B, CPU). Small samples; see Table {ref:tab:pilot} for intervals.",
+                 label="fig:pilot")
 
 
 def _detector_adaptive(R, V):
@@ -250,8 +253,9 @@ def _detector_adaptive(R, V):
            f"placed in structured e-invoice fields, which suggests, though our sample cannot establish it, that detectors "
            f"trained on conversational injections transfer poorly to structured business documents. Recall depended "
            f"strongly on scanning granularity in a small probe (16 injected items): 25 % with 512-token windows, 69 % with "
-           f"128 and 94 % with 64, the last at the cost of flagging 40 % of benign twins, a context-dilution effect. As a "
-           f"defence, D2 reduced worst-case loss from {aed(d0)} to {aed(d2)}. An adaptive mutation search then evaded "
+           f"128 and 94 % with 64, the last at the cost of flagging 40 % of benign twins, a context-dilution effect. The "
+           f"full held-out measurement at 128 tokens found much lower recall than that probe, so probe-level numbers "
+           f"should be treated as unstable until a larger, template-balanced evaluation is run. As a defence, D2 reduced worst-case loss from {aed(d0)} to {aed(d2)}. An adaptive mutation search then evaded "
            f"the detector on all {ev['evaded']} of {ev['caught']} items it had caught, after a median of {ev['median_q']} "
            f"queries (maximum {ev['max_q']}).")
     rows = []
@@ -260,14 +264,15 @@ def _detector_adaptive(R, V):
             rows.append([r["family"], r["config"] + (" (faithful clerk)" if r["s"] == 0 else " (compromised maker)"),
                          aed(r["best_loss"]), aed(r["mean_loss"])])
     R.table(["Family", "Target configuration", "Best loss per campaign", "Mean loss per query"], rows,
-            [1100, 3400, 2430, 2430], "Adaptive control-boundary search, 60 queries per family [A].")
+            [1100, 3400, 2430, 2430], "Adaptive control-boundary search, 60 queries per family [A].", label="tab:adaptive")
     R.para("Against deterministic controls the adaptive attacker finds exactly the boundaries the proofs predict: under "
            "CGA v0.1 its best campaign earns a small within-tolerance amount, under the CaMeL-style design it earns "
            "tens of thousands of dirhams through inflation and near-duplicates, and shell-company campaigns earn nothing "
-           "while onboarding control and the first-payment hold hold. Figure 7 shows the search curves.")
+           "while onboarding control and the first-payment hold hold. Figure {ref:fig:adaptive} shows the search curves.")
     if os.path.exists(os.path.join(FIG, "fig_adaptive.png")):
         R.figure(os.path.join(FIG, "fig_adaptive.png"),
-                 "Best loss found by the adaptive control-boundary search as queries accumulate (reviewer miss rate 10 %) [A].")
+                 "Best loss found by the adaptive control-boundary search as queries accumulate (reviewer miss rate 10 %) [A].",
+                 label="fig:adaptive")
 
 
 def _benchmark_outcomes(R, V):
@@ -281,7 +286,7 @@ def _benchmark_outcomes(R, V):
            "closed that gap by paying the PO price and routing every variance to the buyer, but on development worlds it "
            "failed the automation targets because agreed surcharges were then held. v0.3 grants tolerance only to "
            "suppliers in a surcharge tolerance group, as ERP systems do with vendor tolerance groups, and parses UBL "
-           "invoices with code instead of the model. Table 15 gives the held-out results.")
+           "invoices with code instead of the model. Table {ref:tab:bench} gives the held-out results.")
 
     def cell(ver, key):
         b = B.get(f"{ver}_heldout_noise0.1", {}).get(key)
@@ -310,7 +315,7 @@ def _benchmark_outcomes(R, V):
     rows = [[k, t] + [cell(v, k) for v, _ in vers] for k, t in keys]
     R.table(["ID", "Target", "v0.1", "v0.2", "v0.3"], rows, [800, 3160, 1800, 1800, 1800],
             "Benchmark outcomes on fresh held-out worlds [A], surcharge condition 10 %, prevalence 3 %, review budget 5 %. "
-            "Every evaluation and its conditions are in results/benchmark_ledger.csv.")
+            "Every evaluation and its conditions are in results/benchmark_ledger.csv.", label="tab:bench")
     v3 = B.get("v0.3_heldout_noise0.1", {})
     x3 = v3.get("X3", {}).get("value", {})
     R.para(f"v0.3 meets every pre-registered target on the held-out worlds. Two conditions qualify this. First, the "
@@ -357,7 +362,7 @@ def _hypotheses(R, V):
     R.bullet("supported on held-out worlds for v0.3; failed on development worlds as operationalised, for the attribution "
              "reason given above; no residual payment reached a non-owned account in any CGA run.", "H4.")
     R.para("For the research questions: RQ1 is answered in money for undefended and conventionally defended agents (Table "
-           "12, Table 13); RQ2 favours controls-as-code over model-level and generic capability defences at matched or "
+           "{ref:tab:arch}, Table {ref:tab:pilot}); RQ2 favours controls-as-code over model-level and generic capability defences at matched or "
            "better STP; RQ3 is answered positively for CGA and negatively for naive LLM segregation (RQ7); RQ4 finds "
            "structured invoices helpful but insufficient; RQ5 locates the residual at the tolerance boundary and in the "
            "confidentiality of tolerance groups; RQ6 remains open.")
@@ -445,7 +450,7 @@ def section12(R, V):
     R.h1("12. Risks, Ethics and Governance")
     R.para("The principal scientific risk remains external validity: a synthetic sandbox may miss how real suppliers, "
            "documents and staff behave. The interim work adds two specific risks. First, our worst-case results depend on "
-           "the out-of-band call-back; deepfake voices {c:2601.02914}, {c:2607.09970} could defeat it, so the next phase "
+           "the out-of-band call-back; deepfake speech {c:2601.02914} and automated voice phishing {c:2607.09970} may weaken it, so the next phase "
            "will model a compromised call-back channel explicitly. Second, the optimistic human reviewer flatters "
            "escalation-heavy designs; the reviewer-error sweep shows how much, and we will report it alongside every "
            "headline number.")

@@ -69,11 +69,12 @@ class Cites:
         return re.sub(r"\{c:([^}]+)\}", lambda m: ", ".join(f"[{self.n(k)}]" for k in m.group(1).split(",")), text)
 
 
-def build(pages: dict[str, int] | None, V) -> tuple[Report, Cites]:
+def build(pages: dict[str, int] | None, V, prev_labels: dict | None = None) -> tuple[Report, Cites]:
     cites = Cites()
     R = Report(PROPOSAL)
+    R.prev_labels = prev_labels or {}
     orig_rich = R._rich
-    R._rich = lambda p, text, **kw: orig_rich(p, cites.fmt(text), **kw)
+    R._rich = lambda p, text, **kw: orig_rich(p, R.resolve_refs(cites.fmt(text)), **kw)
     content_a.front(R, V)
     content_a.section1(R, V)
     content_a.section2(R, V)
@@ -133,7 +134,7 @@ def main():
         raise SystemExit(f"{len(uncited)} new references are never cited: {uncited}")
     R.save(OUT)
     pages = heading_pages(render_pdf(OUT), R.toc_entries)
-    R2, _ = build(pages, V)
+    R2, _ = build(pages, V, prev_labels=R.labels)
     R2.save(OUT)
     subprocess.run(["zip", "-q", "-d", OUT, "*/"], capture_output=True)
     pdf = render_pdf(OUT)

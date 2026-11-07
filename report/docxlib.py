@@ -37,10 +37,17 @@ class Report:
                 body.remove(child)
         self.body = body
         self.sect = body.find(qn("w:sectPr"))
+        for section in self.doc.sections:          # footer text inherited from the template
+            for part in (section.footer, section.first_page_footer, section.even_page_footer):
+                for t in part._element.iter(qn("w:t")):
+                    if t.text and "Research Proposal" in t.text:
+                        t.text = t.text.replace("Research Proposal", "Interim Report")
         self.toc_entries: list[tuple[int, str, str]] = []   # (level, text, bookmark)
         self._bm = 0
         self.fig_n = 0
         self.tab_n = 0
+        self.labels: dict[str, int] = {}
+        self.prev_labels: dict[str, int] = {}
 
     # ------------------------------------------------------------------ low level
     def _p(self):
@@ -215,7 +222,10 @@ class Report:
         p = self._p(); self._ppr(p, jc="center", before=60)
         self._rich(p, text, base_i=True)
 
-    def figure(self, path, caption, width_in=6.5):
+    def resolve_refs(self, text: str) -> str:
+        return re.sub(r"\{ref:([^}]+)\}", lambda m: str(self.prev_labels.get(m.group(1), "?")), text)
+
+    def figure(self, path, caption, width_in=6.5, label=None):
         p = self._p(); self._ppr(p, jc="center", before=120, after=0, line=240, keep_next=True)
         tmp = self.doc.add_paragraph()
         tmp.add_run().add_picture(path, width=Inches(width_in))
@@ -223,11 +233,13 @@ class Report:
             p.append(r)
         tmp._p.getparent().remove(tmp._p)
         self.fig_n += 1
+        if label:
+            self.labels[label] = self.fig_n
         c = self._p(); self._ppr(c, jc="center", before=80, after=220)
         self._rich(c, f"Figure {self.fig_n}. {caption}", sz=20, base_i=True)
         return self.fig_n
 
-    def table(self, header, rows, widths, caption, bold_last_row=False):
+    def table(self, header, rows, widths, caption, bold_last_row=False, label=None):
         assert abs(sum(widths) - 9360) <= 2, sum(widths)
         tbl = _el("w:tbl")
         tpr = _el("w:tblPr")
@@ -280,6 +292,8 @@ class Report:
             tbl.append(tr)
         self.sect.addprevious(tbl)
         self.tab_n += 1
+        if label:
+            self.labels[label] = self.tab_n
         c = self._p(); self._ppr(c, jc="center", before=80, after=220)
         self._rich(c, f"Table {self.tab_n}. {caption}", sz=20, base_i=True)
         return self.tab_n
