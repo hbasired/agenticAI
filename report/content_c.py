@@ -20,7 +20,7 @@ def section6(R, V):
            "readiness. Synthetic transaction generators are established in anti-money-laundering research for the same "
            "reasons {c:8}, {c:2506.13989}.")
     R.h2("6.2 SoD-Bench design")
-    R.para("SoD-Bench v0.1 is implemented in Python (package `sodbench`). One buying organisation is simulated over twelve "
+    R.para("SoD-Bench v0.1 is implemented in Python as the sodbench package. One buying organisation is simulated over twelve "
            "business weeks: 300 suppliers with verified master data (legal name, synthetic tax number with a Luhn check "
            "digit {c:luhn1960}, contact on file, ISO 13616-structured IBAN with a valid mod-97 checksum but a fictitious "
            "bank code {c:iso13616}), six suppliers onboarded during the period, employees with authority limits, about "

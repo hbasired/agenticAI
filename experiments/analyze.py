@@ -315,8 +315,9 @@ def pilot(path="results/llm_pilot_qwen35_4b.jsonl"):
         ax.set_xticks(x, fams)
         ax.set_ylabel("Attacker goal achieved (%)")
         ax.set_ylim(0, 105)
-        ax.legend(fontsize=8, loc="upper right", ncol=3)
-        ax.set_title(f"Real-LLM pilot: {out['model']} on CPU, held-out attacks", fontsize=9, color=INK)
+        ax.legend(fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=3)
+        ax.set_title(f"Real-LLM pilot: {out['model']} on CPU, held-out attacks (no bar = no success)", fontsize=9,
+                     color=INK)
         fig.savefig(f"{FIG}/fig_llm_pilot.png")
         plt.close(fig)
     return out
@@ -327,19 +328,25 @@ def adaptive():
     if os.path.exists("results/adaptive/boundary.json"):
         b = json.load(open("results/adaptive/boundary.json"))
         out["boundary"] = [{k: v for k, v in r.items() if k != "curve"} for r in b]
-        fig, axes = plt.subplots(1, 3, figsize=(6.5, 2.4), sharey=False)
+        from matplotlib.ticker import FuncFormatter
+        kfmt = FuncFormatter(lambda v, _: f"{v / 1000:.0f}k" if abs(v) >= 1000 else f"{v:.0f}")
+        fig, axes = plt.subplots(1, 3, figsize=(6.5, 2.6), sharey=True)
+        names = {"D6": "D6 CGA, compromised maker", "D4": "D4 CaMeL-style, compromised model", "D0": "D0 faithful clerk"}
         for ax, fam in zip(axes, ("A7", "A6", "A8")):
             k = 0
             for r in b:
                 if r["family"] != fam or r["human_miss"] != 0.1:
                     continue
                 ax.plot(range(1, len(r["curve"]) + 1), np.maximum(r["curve"], 0), color=PAL[k],
-                        label=f"{r['config']} s={r['s']:g}")
+                        label=names.get(r["config"], r["config"]))
                 k += 1
             ax.set_title(fam, fontsize=9, color=INK)
             ax.set_xlabel("Queries")
+            ax.yaxis.set_major_formatter(kfmt)
         axes[0].set_ylabel("Best loss found (AED)")
-        axes[0].legend(fontsize=7)
+        h, l = axes[0].get_legend_handles_labels()
+        fig.legend(h, l, fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.02), ncol=3)
+        fig.subplots_adjust(wspace=0.15)
         fig.savefig(f"{FIG}/fig_adaptive.png")
         plt.close(fig)
     if os.path.exists("results/adaptive/detector_evasion.json"):

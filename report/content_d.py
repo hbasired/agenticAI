@@ -122,7 +122,7 @@ def _arch_results(R, V):
     R.para("The susceptibility curves (Figure {ref:fig:susc}) are the central new result. Every design whose safety depends on the "
            "model grows roughly in proportion to s; CGA stays between "
            f"{aed(min(g(V, 'D6', s, 'DV') for s in (0.1, 0.25, 0.5, 0.75, 1.0)))} and "
-           f"{aed(max(g(V, 'D6', s, 'DV') for s in (0.1, 0.25, 0.5, 0.75, 1.0)))} from s = 0.1 to 1. Figure {ref:fig:heat} shows where "
+           f"{aed(max(g(V, 'D6', s, 'DV') for s in (0.1, 0.25, 0.5, 0.75, 1.0)))} from s = 0.1 to 1. Figure {{ref:fig:heat}} shows where "
            "losses arise. The undefended and naive designs lose to every family; tool filtering removes direct vendor-"
            "master updates but leaves in-document account redirection and the note channel of A9; the CaMeL-style design "
            "loses only to duplicates and inflation; and CGA's residual is confined to within-tolerance overpayment.")
@@ -219,6 +219,19 @@ def _pilot_results(R, V):
            f"same model's outputs led to {aed(v1['loss_total'])} of attacker gain under v0.1 and {aed(v3['loss_total'])} "
            f"under v0.3, with redirect loss {aed(v1['redirect_loss'])}: whatever the model wrote, the checker paid only "
            f"verified accounts and matched quantities. Benchmarks P1-P4 are summarised in Section 8.8.")
+    if "D1" in pb:
+        d1 = pb["D1"]
+        inj = {k: v for k, v in fam.items() if k in ("A1", "A2", "A3", "A9")}
+        ks, ns = sum(v["succ"] for v in inj.values()), sum(v["n"] for v in inj.values())
+        R.para(f"Static spotlighting (D1) was run on the injection-family subset. With datamarked input the model pursued "
+               f"the attacker's goal on {d1['successes']} of {d1['attacks']} items (95 % CI {pct(d1['ASR_CI'][0], 0)} to "
+               f"{pct(d1['ASR_CI'][1], 0)}), against {ks} of {ns} injection-family items for the undefended agent, at the "
+               f"cost of {d1['false_holds']} false holds among {d1['legit_items']} legitimate items. Static spotlighting "
+               f"therefore helped substantially in this pilot, more than the 60 percent effect size assumed in the "
+               f"architectural tier, which is consistent with earlier reports for static attacks {c_('40')}. Whether the "
+               f"effect survives adaptive rewording with the model in the loop, the test that broke most published "
+               f"defences {c_('34')}, is the most important open experiment for H2, and the false-hold cost needs a larger "
+               f"sample before it can be trusted.")
     if pl and pl.get("opmech"):
         om = pl["opmech"]
         R.para(f"The exploratory OpMech order-gap (RQ6) was measured on {om['pairs']} paired items: the maker's proposal "
