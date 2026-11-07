@@ -1854,5 +1854,142 @@
   "doi": "",
   "comment": "FinRobot Whitepaper V1.0",
   "abstract": "As financial institutions and professionals increasingly incorporate Large Language Models (LLMs) into their workflows, substantial barriers, including proprietary data and specialized knowledge, persist between the finance sector and the AI community. These challenges impede the AI community's ability to enhance financial tasks effectively. Acknowledging financial analysis's critical role, we aim to devise financial-specialized LLM-based toolchains and democratize access to them through open-source initiatives, promoting wider AI adoption in financial decision-making. In this paper, we introduce FinRobot, a novel open-source AI agent platform supporting multiple financially specialized AI agents, each powered by LLM. Specifically, the platform consists of four major layers: 1) the Financial AI Agents layer that formulates Financial Chain-of-Thought (CoT) by breaking sophisticated financ"
+ },
+ "2610.23631": {
+  "title": "Certifying information flow in multi-agent behaviours",
+  "authors": [
+   "M. Haider Akbar",
+   "Onur Pusuluk",
+   "Özgür E. Müstecaplıoğlu"
+  ],
+  "published": "2026-10-16",
+  "updated": "2026-11-03",
+  "primary_category": "quant-ph",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "15 pages",
+  "abstract": "We study which input-output behaviours of several agents can be produced by a declared communication schedule, that is, a fixed sequence of senders, recipients, message alphabets, and output times, together with shared randomness. Since a schedule admits only finitely many deterministic protocols, membership is a linear program, and an infeasible target is excluded by a separating inequality. Under explicit operational assumptions, we prove that the affine hull of the achievable behaviours is described exactly by the equalities stating that each joint output statistic depends only on the inputs that can reach the agents involved, so that a violated equality identifies both the statistic and the missing input. One binary message per event already attains this affine hull, so message capacity restricts which behaviours are achievable without being visible to any equality. We apply the resu"
+ },
+ "2608.27234": {
+  "title": "SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control",
+  "authors": [
+   "Dylan Girrens",
+   "Guangjing Wang"
+  ],
+  "published": "2026-08-27",
+  "updated": "2026-09-04",
+  "primary_category": "cs.CR",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "24 pages, 17 figures",
+  "abstract": "Large language model (LLM) agents increasingly operate over untrusted webpages, documents, tools, and persistent states while exercising authority over security-sensitive resources. Existing defenses typically protect either planning or individual tool interactions, but persistent agents face a broader threat: attacker-controlled data can alter control flow, enter security-sensitive tool arguments, or compromise later queries. We present SPA, a plan-first architecture that secures planning, execution, and cross-query state reuse. SPA invokes the planner once per query to generate a complete executable plan in a declarative domain-specific language, then applies dual-lattice information-flow control to track confidentiality and integrity across explicit data flows and control dependencies. To support persistence without re-exposing untrusted payloads to the planner, SPA stores execution r"
+ },
+ "2610.24277": {
+  "title": "SPIDES: Information-Flow Control for Browser Agents",
+  "authors": [
+   "Egor Zverev",
+   "Juhee Kim",
+   "Leon Trampert",
+   "Boris Köpf",
+   "Aashish Kolluri",
+   "Shruti Tople",
+   "Santiago Zanella-Béguelin"
+  ],
+  "published": "2026-10-16",
+  "updated": "2026-10-16",
+  "primary_category": "cs.CR",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "",
+  "abstract": "Browser agents automate complex workflows by reading and acting on arbitrary page content, but this flexibility exposes them to prompt injection attacks and unintended data exfiltration. Recent work argues that LLM-driven browser agents erode traditional web security boundaries such as the Same-Origin Policy (SOP) by acting across origins with the user's authority and no built-in isolation. We argue that restoring SOP is neither sufficient (a same-origin public sink can leak private data) nor necessary (legitimate tasks require authorized cross-origin flows) for protecting the security of users. We propose SPIDES, which instead enforces information-flow control by gating primitive browser actions such as typing, clicking and navigating on labels propagated from element-level HTML confidentiality and integrity annotations. Untrusted and confidential content is masked from the agent's cont"
+ },
+ "2610.31404": {
+  "title": "AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack",
+  "authors": [
+   "Justin Tan",
+   "Miao Li",
+   "Ding Zhao"
+  ],
+  "published": "2026-10-22",
+  "updated": "2026-10-22",
+  "primary_category": "cs.CR",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "28 pages, 6 figures",
+  "abstract": "Computer-use agents increasingly handle private information and act on users' behalf across desktop and web applications, including email. Phishing therefore poses privacy and security risks that depend not only on whether agents recognize malicious messages, but also on how they respond. Existing phishing datasets were developed primarily for conventional detection, leaving agent susceptibility to persuasive malicious requests insufficiently characterized. To expose vulnerabilities that pre-existing datasets may miss, we introduce AgentPhishing, a benchmark for evaluating whether persuasive phishing attacks can evade detection and induce LLM email agents to comply with malicious requests. We develop PhishOpt, which optimizes reusable email-generation skills against individual agents under fixed benchmark constraints and a realism constraint. We analyze the generated emails using Cialdin"
+ },
+ "2610.27483": {
+  "title": "Securing Agentic Commerce Through Behavior-Aware Fraud Detection and Cybersecurity for Trusted AI-Agent Payment Authorization",
+  "authors": [
+   "Kayode L. Ogunsusi"
+  ],
+  "published": "2026-10-20",
+  "updated": "2026-10-20",
+  "primary_category": "cs.AI",
+  "journal_ref": "International Journal on Cybernetics & Informatics (IJCI), Vol. 15, No. 4, August 2026",
+  "doi": "10.5121/ijci.2026.15406",
+  "comment": "20 pages, 9 figures",
+  "abstract": "The growing use of autonomous artificial intelligence agents in digital commerce creates new security concerns involving agent impersonation, unauthorized payments, compromised agents, and misuse of delegated authority. This research introduces the Autonomous Commerce Agent Guard System (ACAGS), a cybersecurity framework combining supervised machine learning, behavioral analytics, agent-specific authorization controls, and explainable AI. The framework was evaluated using synthetic financial transaction data augmented with simulated agent characteristics and five adversarial scenarios. XGBoost was selected following comparisons with alternative classifiers. Across ten experimental runs, behavioral features improved mean F1-score from 52.12% to 67.49%, with agent-specific features increasing performance to 69.46%. The framework achieved detection rates of 99.77% for abnormal agent behavio"
+ },
+ "2607.18063": {
+  "title": "Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security",
+  "authors": [
+   "Devina Jain",
+   "David Hartmann",
+   "Chuan Li"
+  ],
+  "published": "2026-07-20",
+  "updated": "2026-09-11",
+  "primary_category": "cs.CR",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "Second Workshop on Agents in the Wild: Safety, Security, and Beyond",
+  "abstract": "LLM-based agents process external content, exposing them to prompt injection and multi-turn manipulation. We present a 21-scenario benchmark for adaptive cross-session attacks against fresh-session LLM defenders: an autonomous LLM attacker observes prior defender responses and pivots across rounds, while each defender response is evaluated as a fresh interaction. A controlled 3 x 3 attacker-defender matrix contains 945 battles. Restricting scoring to the first round yields 0-1% attack success rate (ASR); allowing 15 rounds yields 7.9-16.8%. Pooling three attacker LLMs uncovers 1.7-2.2 times as many unique successful inputs as the best single attacker, at three times the battle budget. Aggregate rates conceal opposing scenario-specific weaknesses in session-secret protection and authority handling, preserved in two higher-sample evaluations. On six scenarios, adding one provenance paragra"
+ },
+ "2510.06445": {
+  "title": "A Survey on Agentic Security: Applications, Threats and Defenses",
+  "authors": [
+   "Asif Shahriar",
+   "Md Nafiu Rahman",
+   "Sadif Ahmed",
+   "Farig Sadeque",
+   "Md Rizwan Parvez"
+  ],
+  "published": "2025-10-07",
+  "updated": "2026-10-31",
+  "primary_category": "cs.CL",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "Transactions on Machine Learning Research (TMLR) 2026",
+  "abstract": "In this work we present the first holistic survey of the agentic security landscape, structuring the field around the fundamental pillars of Applications, Threats and Defenses. We provide a comprehensive taxonomy of 274 papers that covers red-teaming, blue-teaming and domain-specific applications, attack surfaces on agentic systems, defense techniques, and both offensive and defensive evaluation frameworks. For each pillar, we first discuss the literature around the taxonomy and then perform a quantitative analysis to understand the patterns across these works. For the applications, we show their security-lifecycle coverage map, compare between red-teaming and blue-teaming agents, and analyze the adversarial use of red-teaming applications. On the threat side, we analyze the entry points and agent-loop stages that attacks target, their specificity to the agentic setting, and the threat m"
+ },
+ "2610.40714": {
+  "title": "PrivacyFlow: Privacy in AI Agents through Information Flow Analysis and Consequence-Aware Risk Management",
+  "authors": [
+   "Robin Staab",
+   "Tom Wollschläger",
+   "Vahab Mirrokni",
+   "Reza Shokri"
+  ],
+  "published": "2026-10-29",
+  "updated": "2026-10-29",
+  "primary_category": "cs.CR",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "",
+  "abstract": "Autonomous LLM agents executing multi-step workflows over personal data often misalign with user privacy expectations and leak sensitive, out-of-context information. Although Contextual Integrity (CI) formalizes this problem, existing benchmarks and defenses rarely operationalize CI for realistic multi-step task sequences in evolving environments. In this work, we first introduce agentic PrivacyBench, a benchmark of 5873 tasks in 986 task sequences with dynamic environment updates and CI-grounded allow-sets for sensitive information. We also introduce PrivacyFlow, a defense that separates deliberative privacy planning (System 2) from task execution (System 1), treating each sharing decision as a structured risk-management problem. Before execution, PrivacyFlow traces the provenance and purpose of each planned data flow, models recipient background knowledge, and simulates what external a"
+ },
+ "2607.18485": {
+  "title": "Trusted Credentials, Untrusted Behavior: Benchmarking LLM-Agent Security in High-Performance Computing",
+  "authors": [
+   "Jie Li"
+  ],
+  "published": "2026-07-20",
+  "updated": "2026-07-20",
+  "primary_category": "cs.CR",
+  "journal_ref": "",
+  "doi": "",
+  "comment": "",
+  "abstract": "Large language model (LLM) agents are starting to take on routine work in high-performance computing (HPC), including monitoring Slurm jobs, diagnosing failed builds, inspecting simulation output, and coordinating scientific workflows. To do this work, an agent commonly acts under its user's credentials and inherits the user's access to files and the scheduler. This arrangement creates a failure mode that ordinary account-level controls do not capture. Adversarial instructions in a log, tool description, shared file, or peer-agent message may redirect the agent beyond the task the user assigned, even though every resulting command is authenticated and permitted for that account. We refer to this as the hijacked authorized agent problem. Existing agent-security studies explain relevant mechanisms, such as indirect prompt injection and tool misuse, but generally evaluate them in web, enter"
  }
 }

@@ -1,0 +1,884 @@
+[
+ {
+  "config": "D0",
+  "family": "A1",
+  "loss": 873426.9983333334,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D0",
+  "family": "A2",
+  "loss": 786017.4383333334,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D0",
+  "family": "A3",
+  "loss": 909158.6666666666,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D0",
+  "family": "A4",
+  "loss": 847612.6983333334,
+  "n": 103,
+  "success": 87
+ },
+ {
+  "config": "D0",
+  "family": "A5",
+  "loss": 836722.5333333333,
+  "n": 102,
+  "success": 102
+ },
+ {
+  "config": "D0",
+  "family": "A6",
+  "loss": 171536.56833333333,
+  "n": 101,
+  "success": 56
+ },
+ {
+  "config": "D0",
+  "family": "A7",
+  "loss": 39270.08666666667,
+  "n": 154,
+  "success": 96
+ },
+ {
+  "config": "D0",
+  "family": "A8",
+  "loss": 161913.97333333333,
+  "n": 250,
+  "success": 101
+ },
+ {
+  "config": "D0",
+  "family": "A9",
+  "loss": 1138408.0483333333,
+  "n": 100,
+  "success": 91
+ },
+ {
+  "config": "D1",
+  "family": "A1",
+  "loss": 275750.705,
+  "n": 105,
+  "success": 39
+ },
+ {
+  "config": "D1",
+  "family": "A2",
+  "loss": 364197.1866666667,
+  "n": 105,
+  "success": 44
+ },
+ {
+  "config": "D1",
+  "family": "A3",
+  "loss": 345945.85833333334,
+  "n": 105,
+  "success": 39
+ },
+ {
+  "config": "D1",
+  "family": "A4",
+  "loss": 923397.6533333333,
+  "n": 103,
+  "success": 92
+ },
+ {
+  "config": "D1",
+  "family": "A5",
+  "loss": 949518.4516666667,
+  "n": 102,
+  "success": 102
+ },
+ {
+  "config": "D1",
+  "family": "A6",
+  "loss": 229639.40333333332,
+  "n": 101,
+  "success": 67
+ },
+ {
+  "config": "D1",
+  "family": "A7",
+  "loss": 48778.09333333333,
+  "n": 154,
+  "success": 107
+ },
+ {
+  "config": "D1",
+  "family": "A8",
+  "loss": 161913.97333333333,
+  "n": 250,
+  "success": 101
+ },
+ {
+  "config": "D1",
+  "family": "A9",
+  "loss": 558298.0566666666,
+  "n": 100,
+  "success": 48
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A1",
+  "loss": 731589.1083333334,
+  "n": 105,
+  "success": 94
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A2",
+  "loss": 745478.32,
+  "n": 105,
+  "success": 100
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A3",
+  "loss": 794413.6766666668,
+  "n": 105,
+  "success": 89
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A4",
+  "loss": 851290.5066666667,
+  "n": 103,
+  "success": 87
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A5",
+  "loss": 865145.4416666668,
+  "n": 102,
+  "success": 102
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A6",
+  "loss": 182014.73666666666,
+  "n": 101,
+  "success": 58
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A7",
+  "loss": 39671.48666666667,
+  "n": 154,
+  "success": 97
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A8",
+  "loss": 161913.97333333333,
+  "n": 250,
+  "success": 101
+ },
+ {
+  "config": "D1-adaptive",
+  "family": "A9",
+  "loss": 1012043.4833333334,
+  "n": 100,
+  "success": 84
+ },
+ {
+  "config": "D3",
+  "family": "A1",
+  "loss": 360590.5533333333,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D3",
+  "family": "A2",
+  "loss": 343247.7783333333,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D3",
+  "family": "A3",
+  "loss": 381220.01166666666,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D3",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D3",
+  "family": "A5",
+  "loss": 404361.6983333333,
+  "n": 102,
+  "success": 102
+ },
+ {
+  "config": "D3",
+  "family": "A6",
+  "loss": 295294.8133333333,
+  "n": 101,
+  "success": 90
+ },
+ {
+  "config": "D3",
+  "family": "A7",
+  "loss": 64329.35,
+  "n": 154,
+  "success": 148
+ },
+ {
+  "config": "D3",
+  "family": "A8",
+  "loss": 161913.97333333333,
+  "n": 250,
+  "success": 150
+ },
+ {
+  "config": "D3",
+  "family": "A9",
+  "loss": 1031427.3850000001,
+  "n": 100,
+  "success": 90
+ },
+ {
+  "config": "D4",
+  "family": "A1",
+  "loss": 71.82833333333333,
+  "n": 105,
+  "success": 1
+ },
+ {
+  "config": "D4",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D4",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D4",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D4",
+  "family": "A5",
+  "loss": 826.3016666666667,
+  "n": 102,
+  "success": 2
+ },
+ {
+  "config": "D4",
+  "family": "A6",
+  "loss": 288511.82,
+  "n": 101,
+  "success": 87
+ },
+ {
+  "config": "D4",
+  "family": "A7",
+  "loss": 64204.17333333333,
+  "n": 154,
+  "success": 146
+ },
+ {
+  "config": "D4",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D4",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A1",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A5",
+  "loss": 0.0,
+  "n": 102,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A6",
+  "loss": 0.0,
+  "n": 101,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A7",
+  "loss": 0.0,
+  "n": 154,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D5",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D6",
+  "family": "A1",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D6",
+  "family": "A5",
+  "loss": 6.864999999999999,
+  "n": 102,
+  "success": 1
+ },
+ {
+  "config": "D6",
+  "family": "A6",
+  "loss": 1.4483333333333333,
+  "n": 101,
+  "success": 1
+ },
+ {
+  "config": "D6",
+  "family": "A7",
+  "loss": 2603.8533333333335,
+  "n": 154,
+  "success": 93
+ },
+ {
+  "config": "D6",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D6",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A1",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A5",
+  "loss": 6.864999999999999,
+  "n": 102,
+  "success": 1
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A6",
+  "loss": 1.4483333333333333,
+  "n": 101,
+  "success": 1
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A7",
+  "loss": 2603.8533333333335,
+  "n": 154,
+  "success": 93
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D6-noVoP",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D6a",
+  "family": "A1",
+  "loss": 944.98,
+  "n": 105,
+  "success": 1
+ },
+ {
+  "config": "D6a",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6a",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6a",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D6a",
+  "family": "A5",
+  "loss": 6.864999999999999,
+  "n": 102,
+  "success": 1
+ },
+ {
+  "config": "D6a",
+  "family": "A6",
+  "loss": 946.4283333333333,
+  "n": 101,
+  "success": 2
+ },
+ {
+  "config": "D6a",
+  "family": "A7",
+  "loss": 2603.8533333333335,
+  "n": 154,
+  "success": 93
+ },
+ {
+  "config": "D6a",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D6a",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A1",
+  "loss": 275862.76333333337,
+  "n": 105,
+  "success": 75
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A2",
+  "loss": 233005.97666666668,
+  "n": 105,
+  "success": 71
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A3",
+  "loss": 282547.125,
+  "n": 105,
+  "success": 72
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A5",
+  "loss": 1569.618333333333,
+  "n": 102,
+  "success": 3
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A6",
+  "loss": 946.4283333333333,
+  "n": 101,
+  "success": 2
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A7",
+  "loss": 2603.8533333333335,
+  "n": 154,
+  "success": 93
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D6a-noVoP",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D6b",
+  "family": "A1",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6b",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6b",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6b",
+  "family": "A4",
+  "loss": 0.0,
+  "n": 103,
+  "success": 0
+ },
+ {
+  "config": "D6b",
+  "family": "A5",
+  "loss": 6.864999999999999,
+  "n": 102,
+  "success": 1
+ },
+ {
+  "config": "D6b",
+  "family": "A6",
+  "loss": 12499.985,
+  "n": 101,
+  "success": 3
+ },
+ {
+  "config": "D6b",
+  "family": "A7",
+  "loss": 2734.5699999999997,
+  "n": 154,
+  "success": 81
+ },
+ {
+  "config": "D6b",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D6b",
+  "family": "A9",
+  "loss": 0.0,
+  "n": 100,
+  "success": 0
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A1",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A2",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A3",
+  "loss": 0.0,
+  "n": 105,
+  "success": 0
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A4",
+  "loss": 534822.2666666667,
+  "n": 103,
+  "success": 58
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A5",
+  "loss": 6.864999999999999,
+  "n": 102,
+  "success": 1
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A6",
+  "loss": 12499.985,
+  "n": 101,
+  "success": 3
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A7",
+  "loss": 2708.7766666666666,
+  "n": 154,
+  "success": 80
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A8",
+  "loss": 0.0,
+  "n": 250,
+  "success": 0
+ },
+ {
+  "config": "D6b-noVoP",
+  "family": "A9",
+  "loss": 449821.27,
+  "n": 100,
+  "success": 56
+ },
+ {
+  "config": "D6c",
+  "family": "A1",
+  "loss": 387015.1666666667,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D6c",
+  "family": "A2",
+  "loss": 363077.75666666665,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D6c",
+  "family": "A3",
+  "loss": 388600.0316666667,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D6c",
+  "family": "A4",
+  "loss": 51560.67833333334,
+  "n": 103,
+  "success": 9
+ },
+ {
+  "config": "D6c",
+  "family": "A5",
+  "loss": 456265.705,
+  "n": 102,
+  "success": 102
+ },
+ {
+  "config": "D6c",
+  "family": "A6",
+  "loss": 174725.50833333333,
+  "n": 101,
+  "success": 65
+ },
+ {
+  "config": "D6c",
+  "family": "A7",
+  "loss": 47491.43,
+  "n": 154,
+  "success": 110
+ },
+ {
+  "config": "D6c",
+  "family": "A8",
+  "loss": 161913.97333333333,
+  "n": 250,
+  "success": 101
+ },
+ {
+  "config": "D6c",
+  "family": "A9",
+  "loss": 626526.6083333333,
+  "n": 100,
+  "success": 58
+ },
+ {
+  "config": "D7",
+  "family": "A1",
+  "loss": 873426.9983333334,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D7",
+  "family": "A2",
+  "loss": 786017.4383333334,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D7",
+  "family": "A3",
+  "loss": 909158.6666666666,
+  "n": 105,
+  "success": 105
+ },
+ {
+  "config": "D7",
+  "family": "A4",
+  "loss": 847612.6983333334,
+  "n": 103,
+  "success": 87
+ },
+ {
+  "config": "D7",
+  "family": "A5",
+  "loss": 836722.5333333333,
+  "n": 102,
+  "success": 102
+ },
+ {
+  "config": "D7",
+  "family": "A6",
+  "loss": 171536.56833333333,
+  "n": 101,
+  "success": 56
+ },
+ {
+  "config": "D7",
+  "family": "A7",
+  "loss": 39270.08666666667,
+  "n": 154,
+  "success": 96
+ },
+ {
+  "config": "D7",
+  "family": "A8",
+  "loss": 161913.97333333333,
+  "n": 250,
+  "success": 150
+ },
+ {
+  "config": "D7",
+  "family": "A9",
+  "loss": 1138408.0483333333,
+  "n": 100,
+  "success": 91
+ }
+]

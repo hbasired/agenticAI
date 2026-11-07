@@ -93,3 +93,13 @@
 2208.02814 Conformal risk control
 1706.04599 Calibration Guo
 2405.14767 FinRobot
+# --- added in literature round 2 (2026 work) ---
+# 2610.23631 (not relevant: quantum information theory) Certifying information flow in multi-agent behaviours
+2608.27234 SPA plan-first IFC persistent agents
+2610.24277 SPIDES IFC browser agents
+2610.31404 AgentPhishing
+2610.27483 Behavior-aware fraud detection agentic commerce
+2607.18063 Adaptive Adversaries benchmark
+2510.06445 Survey agentic security
+2610.40714 PrivacyFlow
+2607.18485 Trusted credentials untrusted behavior HPC
