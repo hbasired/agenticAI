@@ -1,0 +1,297 @@
+{
+ "boundary": [
+  {
+   "family": "A7",
+   "config": "D6",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 2298.9339999999793,
+   "best_params": {
+    "price_delta": 0.01670662678413537,
+    "qty_delta": 0.005067141757852811,
+    "split": 2
+   },
+   "mean_loss": 691.6765249999972,
+   "human_miss": 0.0,
+   "seconds": 17.3
+  },
+  {
+   "family": "A7",
+   "config": "D4",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 72412.734,
+   "best_params": {
+    "price_delta": 0.21608348557898596,
+    "qty_delta": 0.2549940786352211,
+    "split": 4
+   },
+   "mean_loss": 20254.4367,
+   "human_miss": 0.0,
+   "seconds": 16.9
+  },
+  {
+   "family": "A7",
+   "config": "D0",
+   "s": 0.0,
+   "budget": 60,
+   "best_loss": 2298.9339999999793,
+   "best_params": {
+    "price_delta": 0.01670662678413537,
+    "qty_delta": 0.005067141757852811,
+    "split": 2
+   },
+   "mean_loss": 351.676674999998,
+   "human_miss": 0.0,
+   "seconds": 16.8
+  },
+  {
+   "family": "A6",
+   "config": "D6",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "op": "sep",
+    "amount_delta": 0.00731484570499843,
+    "delay": 30
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.0,
+   "seconds": 17.2
+  },
+  {
+   "family": "A6",
+   "config": "D4",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 106122.08700000001,
+   "best_params": {
+    "op": "append_digit",
+    "amount_delta": -0.0088089778966229,
+    "delay": 13
+   },
+   "mean_loss": 28086.967291666664,
+   "human_miss": 0.0,
+   "seconds": 17.2
+  },
+  {
+   "family": "A6",
+   "config": "D0",
+   "s": 0.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "op": "sep",
+    "amount_delta": 0.00731484570499843,
+    "delay": 30
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.0,
+   "seconds": 17.3
+  },
+  {
+   "family": "A8",
+   "config": "D6",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "category": "logistics",
+    "first_amount": 7818.532110199309,
+    "amount": 7740.394456185796,
+    "n_invoices": 8,
+    "gap": 4
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.0,
+   "seconds": 16.9
+  },
+  {
+   "family": "A8",
+   "config": "D4",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "category": "logistics",
+    "first_amount": 7818.532110199309,
+    "amount": 7740.394456185796,
+    "n_invoices": 8,
+    "gap": 4
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.0,
+   "seconds": 16.9
+  },
+  {
+   "family": "A8",
+   "config": "D0",
+   "s": 0.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "category": "logistics",
+    "first_amount": 7818.532110199309,
+    "amount": 7740.394456185796,
+    "n_invoices": 8,
+    "gap": 4
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.0,
+   "seconds": 16.8
+  },
+  {
+   "family": "A7",
+   "config": "D6",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 2298.9339999999793,
+   "best_params": {
+    "price_delta": 0.01670662678413537,
+    "qty_delta": 0.005067141757852811,
+    "split": 2
+   },
+   "mean_loss": 691.6765249999972,
+   "human_miss": 0.1,
+   "seconds": 16.4
+  },
+  {
+   "family": "A7",
+   "config": "D4",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 72412.734,
+   "best_params": {
+    "price_delta": 0.21608348557898596,
+    "qty_delta": 0.2549940786352211,
+    "split": 4
+   },
+   "mean_loss": 20254.4367,
+   "human_miss": 0.1,
+   "seconds": 16.9
+  },
+  {
+   "family": "A7",
+   "config": "D0",
+   "s": 0.0,
+   "budget": 60,
+   "best_loss": 2298.9339999999793,
+   "best_params": {
+    "price_delta": 0.01670662678413537,
+    "qty_delta": 0.005067141757852811,
+    "split": 2
+   },
+   "mean_loss": 351.676674999998,
+   "human_miss": 0.1,
+   "seconds": 16.9
+  },
+  {
+   "family": "A6",
+   "config": "D6",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "op": "sep",
+    "amount_delta": 0.00731484570499843,
+    "delay": 30
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.1,
+   "seconds": 17.1
+  },
+  {
+   "family": "A6",
+   "config": "D4",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 106122.08700000001,
+   "best_params": {
+    "op": "append_digit",
+    "amount_delta": -0.0088089778966229,
+    "delay": 13
+   },
+   "mean_loss": 28086.967291666664,
+   "human_miss": 0.1,
+   "seconds": 17.5
+  },
+  {
+   "family": "A6",
+   "config": "D0",
+   "s": 0.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "op": "sep",
+    "amount_delta": 0.00731484570499843,
+    "delay": 30
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.1,
+   "seconds": 16.5
+  },
+  {
+   "family": "A8",
+   "config": "D6",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "category": "logistics",
+    "first_amount": 7818.532110199309,
+    "amount": 7740.394456185796,
+    "n_invoices": 8,
+    "gap": 4
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.1,
+   "seconds": 17.7
+  },
+  {
+   "family": "A8",
+   "config": "D4",
+   "s": 1.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "category": "logistics",
+    "first_amount": 7818.532110199309,
+    "amount": 7740.394456185796,
+    "n_invoices": 8,
+    "gap": 4
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.1,
+   "seconds": 16.9
+  },
+  {
+   "family": "A8",
+   "config": "D0",
+   "s": 0.0,
+   "budget": 60,
+   "best_loss": 0.0,
+   "best_params": {
+    "category": "logistics",
+    "first_amount": 7818.532110199309,
+    "amount": 7740.394456185796,
+    "n_invoices": 8,
+    "gap": 4
+   },
+   "mean_loss": 0.0,
+   "human_miss": 0.1,
+   "seconds": 16.9
+  }
+ ],
+ "detector_evasion": {
+  "items": 11,
+  "evaded": 11,
+  "rate": 1.0,
+  "rate_CI": [
+   0.7411599827511859,
+   1.0
+  ],
+  "median_queries": 4,
+  "budget": 40
+ }
+}

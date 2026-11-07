@@ -1,0 +1,10 @@
+{
+ "ECE_fixed_weights": 0.06353845172692407,
+ "ECE_refit_dev": 0.035006116561304965,
+ "conformal_alpha": 0.02,
+ "threshold": 0.19742018446760629,
+ "heldout_benign_flag_rate": 0.011840688912809472,
+ "heldout_attack_recall_at_threshold": 0.7410714285714286,
+ "n_dev": 1995,
+ "n_heldout": 1970
+}

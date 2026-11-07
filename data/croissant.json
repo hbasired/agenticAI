@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "sc": "https://schema.org/",
+    "conformsTo": "dct:conformsTo",
+    "dct": "http://purl.org/dc/terms/",
+    "data": {"@id": "cr:data", "@type": "@json"},
+    "dataType": {"@id": "cr:dataType", "@type": "@vocab"},
+    "field": "cr:field",
+    "fileObject": "cr:fileObject",
+    "recordSet": "cr:recordSet",
+    "source": "cr:source",
+    "extract": "cr:extract",
+    "column": "cr:column"
+  },
+  "@type": "sc:Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "name": "SoD-Bench",
+  "description": "Synthetic procure-to-pay sandbox for money-denominated evaluation of LLM-agent defences against invoice manipulation and payment diversion. Worlds are generated procedurally from seeds; each inbox item carries exact ground truth (payee, legitimate value, attacker account, attack family, split).",
+  "version": "0.1.0",
+  "citeAs": "Hemanth (2026). Segregation of Duties for AI Agents: SoD-Bench. Interim release.",
+  "license": "TBD by the author before publication",
+  "url": "https://github.com/hbasired/agenticAI",
+  "keywords": ["agentic AI", "procure-to-pay", "prompt injection", "business email compromise", "internal controls", "segregation of duties"],
+  "rai:dataCollection": "Procedural generation; formats follow UBL 2.1, Peppol BIS Billing 3.0 and a PINT AE-style profile; no personal or real company data.",
+  "rai:dataLimitations": "Synthetic environment; optimistic human-review model unless an error rate is set; insider fraud and ERP compromise out of scope.",
+  "rai:dataUseCases": "Defensive evaluation of agent architectures and controls for accounts payable.",
+  "distribution": [
+    {"@type": "cr:FileObject", "@id": "generator", "name": "generator", "contentUrl": "sodbench/world/generator.py", "encodingFormat": "text/x-python", "sha256": "regenerate-from-seed"}
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "inbox_items",
+      "name": "inbox_items",
+      "description": "One record per inbox item of a generated world.",
+      "field": [
+        {"@type": "cr:Field", "@id": "inbox_items/item_id", "name": "item_id", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "@id": "inbox_items/day", "name": "day", "dataType": "sc:Integer"},
+        {"@type": "cr:Field", "@id": "inbox_items/kind", "name": "kind", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "@id": "inbox_items/channel", "name": "channel", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "@id": "inbox_items/agent_view", "name": "agent_view", "description": "Exact untrusted text an agent receives", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "@id": "inbox_items/is_attack", "name": "is_attack", "dataType": "sc:Boolean"},
+        {"@type": "cr:Field", "@id": "inbox_items/family", "name": "family", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "@id": "inbox_items/legit_value", "name": "legit_value", "dataType": "sc:Float"},
+        {"@type": "cr:Field", "@id": "inbox_items/payee_supplier_id", "name": "payee_supplier_id", "dataType": "sc:Text"},
+        {"@type": "cr:Field", "@id": "inbox_items/split", "name": "split", "dataType": "sc:Text"}
+      ]
+    }
+  ]
+}
