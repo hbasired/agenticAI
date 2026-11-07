@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sodbench"
+version = "0.1.0"
+description = "SoD-Bench: a procure-to-pay sandbox for evaluating segregation-of-duties defences for LLM agents"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "pyyaml>=6.0",
+  "reportlab>=4.0",
+  "pypdf>=4.0",
+  "lxml>=5.0",
+  "scipy>=1.11",
+  "matplotlib>=3.8",
+  "networkx>=3.0",
+  "z3-solver>=4.12",
+]
+
+[project.optional-dependencies]
+llm = ["llama-cpp-python>=0.3.30", "openai>=1.0"]
+detector = ["onnxruntime>=1.17", "tokenizers>=0.15"]
+test = ["pytest>=7", "hypothesis>=6"]
+
+[tool.setuptools.packages.find]
+include = ["sodbench*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

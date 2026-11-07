@@ -1,0 +1,95 @@
+# --- arXiv references already in the proposal ---
+2601.07853 FinVault [6]
+2608.18136 FraudBench [7]
+2306.16424 AML synthetic [8]
+2605.09968 OpMech Guha [12]
+2510.13825 A2AS [16]
+2510.19631 HSCodeComp [21]
+2509.08380 Co-Investigator AI [24]
+2605.17036 Long et al. SCM agents [25]
+2505.18597 LLMs for SCM [26]
+2604.15367 SoK agentic commerce [27]
+2505.07078 LLM investing long run [28]
+2603.00285 TraderBench [29]
+2510.09023 Attacker moves second [34]
+2503.18813 CaMeL [35]
+2506.08837 Design patterns [36]
+2403.02691 InjecAgent [37]
+2410.02644 ASB [38]
+2406.12045 tau-bench [39]
+2403.14720 Spotlighting [40]
+2505.03574 LlamaFirewall [41]
+2509.24967 SecInfer [52]
+2406.13352 AgentDojo [31]
+2302.12173 Greshake [33]
+2310.12815 Liu formalizing PI [30]
+2502.05174 MELON [42]
+# --- candidates: closest 2026 prior work ---
+2609.38224 SoD privileged LLM agents
+2608.27427 Persona-execution separation
+2607.19595 Twin Agent privilege separated
+2604.19657 Agent execution environment user data
+2609.22076 APort Vault payment authorization
+2609.11757 Whisper attacks AP2
+2604.11430 Hardening x402
+2606.04306 Organizational control layer
+# --- defences ---
+2404.13208 Instruction hierarchy
+2402.06363 StruQ
+2410.05451 SecAlign
+2507.02735 Meta SecAlign
+2505.23643 FIDES IFC
+2504.11703 Progent
+2403.04960 IsolateGPT
+2409.19091 f-secure IFC
+2503.15547 Prompt flow integrity
+2504.20984 ACE architecture
+2502.08966 RTBAS
+2501.17070 Conseca contextual security
+2412.16682 Task Shield
+2506.12104 DRIFT
+2504.11358 DataSentinel
+2507.15219 PromptArmor
+2503.00061 Adaptive attacks break IPI defenses
+2505.14534 Gemini lessons IPI
+2505.22852 Operationalizing CaMeL
+2503.22738 ShieldAgent
+2406.09187 GuardAgent
+2503.18666 AgentSpec
+2411.00348 Attention Tracker
+2406.00799 TaskTracker
+2403.04651 Cedar authorization
+# --- attacks & benchmarks ---
+2307.15043 GCG
+2211.09527 Ignore previous prompt
+2306.05499 HouYi
+2311.01011 Tensor Trust
+2311.16119 HackAPrompt
+2504.18575 WASP
+2410.09024 AgentHarm
+2506.07982 tau2-bench
+2309.15817 ToolEmu
+2401.10019 R-Judge
+2412.14470 Agent-SafetyBench
+2406.07954 SaTML CTF
+2312.14197 BIPIA
+2407.12784 AgentPoison
+# --- multi-agent, protocols, identity, governance ---
+2503.12188 MAS execute malicious code
+2410.07283 Prompt infection
+2502.14143 Multi-agent risks
+2505.02077 Open challenges MAS security
+2502.14847 Agent-in-the-middle
+2503.23278 MCP landscape
+2501.09674 Authenticated delegation
+2401.13138 Visibility into AI agents
+2406.12137 IDs for AI systems
+2501.07913 Governing AI agents
+2503.14499 METR long tasks
+2407.01502 AI agents that matter
+2507.02825 Agentic benchmark checklist
+2501.17805 International AI Safety Report 2025
+# --- statistics, calibration, finance agents ---
+2208.02814 Conformal risk control
+1706.04599 Calibration Guo
+2405.14767 FinRobot
