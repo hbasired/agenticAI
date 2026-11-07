@@ -77,7 +77,7 @@ class _Injector:
             if not (day_min <= it.day <= day_max):
                 continue
             sup = self.w.suppliers.get(it.truth.payee_supplier_id or "")
-            if pool and (sup is None or sup.pool != self.split):
+            if sup is None or (pool and sup.pool != self.split):
                 continue
             out.append(it)
         return out
@@ -175,10 +175,19 @@ class _Injector:
         self.mark(it, "A3", "redirect", iban, f"{tid}:{where}")
         return True
 
+    def upcoming_target(self, horizon=(1, 10)):
+        """BEC attackers time a bank-change request just before invoices they know are pending."""
+        cands = []
+        for it in self.w.items:
+            if it.kind == "invoice" and not it.truth.is_attack and it.truth.legit_value > 0:
+                sup = self.w.suppliers.get(it.truth.payee_supplier_id or "")
+                if sup is not None and sup.pool == self.split and not sup.non_po_eligible and it.day > horizon[1]:
+                    cands.append((sup, it.day))
+        sup, inv_day = self.rng.choice(cands)
+        return sup, max(1, inv_day - self.rng.randint(*horizon))
+
     def a4(self) -> bool:
-        pool = [s for s in self.w.suppliers.values() if s.pool == self.split and not s.non_po_eligible]
-        sup = self.rng.choice(pool)
-        day = self.rng.randint(1, self.w.n_days - 15)
+        sup, day = self.upcoming_target()
         iban = self.attacker_iban()
         tid, _, subj, body = self.template(P.BEC)
         name, addr = self.sender(sup, 0.6)
@@ -337,8 +346,7 @@ class _Injector:
         pool = [s for s in pool if any(d > 3 for d in later.get(s.supplier_id, []))]
         if not pool:
             return False
-        sup = self.rng.choice(pool)
-        day = self.rng.randint(1, max(1, max(later[sup.supplier_id]) - 2))
+        sup, day = self.upcoming_target()
         iban = self.attacker_iban()
         tid, _, subj, body = self.template(P.LAUNDER)
         name, addr = self.sender(sup, 0.5)

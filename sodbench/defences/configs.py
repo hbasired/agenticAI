@@ -31,14 +31,16 @@ class ConfigSpec:
 
 def all_configs() -> dict[str, ConfigSpec]:
     base = PolicyPack()
+    generic = replace(base, vop_enabled=False)   # SOP of a generic agent: no VoP service in its toolset
     c = {
-        "D0": ConfigSpec("D0", "Single agent, all tools", source="-"),
-        "D1": ConfigSpec("D1", "D0 + spotlighting, hardened prompt", spotlight=True, source="[40]"),
-        "D2": ConfigSpec("D2", "D0 + prompt-injection detector", detector=True, source="[41], [44]"),
-        "D3": ConfigSpec("D3", "D0 + least-privilege tool filtering", tools=frozenset({"pay_any", "note"}), source="[31]"),
+        "D0": ConfigSpec("D0", "Single agent, all tools", policy=generic, source="-"),
+        "D1": ConfigSpec("D1", "D0 + spotlighting, hardened prompt", spotlight=True, policy=generic, source="[40]"),
+        "D2": ConfigSpec("D2", "D0 + prompt-injection detector", detector=True, policy=generic, source="[41], [44]"),
+        "D3": ConfigSpec("D3", "D0 + least-privilege tool filtering", tools=frozenset({"pay_any", "note"}), policy=generic, source="[31]"),
         "D4": ConfigSpec("D4", "Plan-then-execute, quarantined LLM, capability policy", camel=True,
-                         tools=frozenset({"pay_any", "note"}), llm_calls_per_item=2.0, source="[35], [36]"),
-        "D5": ConfigSpec("D5", "Human approval of every payment", human_all=True, source="-"),
+                         tools=frozenset({"pay_any", "note"}), llm_calls_per_item=2.0, policy=generic,
+                         source="[35], [36]"),
+        "D5": ConfigSpec("D5", "Human approval of every payment", human_all=True, policy=generic, source="-"),
         "D6": ConfigSpec("D6", "CGA: SoD sessions, controls-as-code, provenance", typed=True, tools=frozenset(),
                          policy=base, source="this work"),
         "D6a": ConfigSpec("D6a", "CGA without provenance rule", typed=True, tools=frozenset(),
@@ -49,7 +51,7 @@ def all_configs() -> dict[str, ConfigSpec]:
                           source="this work"),
         "D7": ConfigSpec("D7", "Naive SoD: two LLM sessions, free-text hand-off", naive_sod=True,
                          tools=frozenset({"pay_any", "update_bank", "note"}), llm_calls_per_item=2.0,
-                         source="this work"),
+                         policy=generic, source="this work"),
     }
     return c
 

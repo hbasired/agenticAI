@@ -158,11 +158,12 @@ class ControlsChecker:
                     full = False
                     continue
                 po_price = po.price(ln.line_no)
-                if po_price < ln.unit_price - 0.005 and ln.unit_price > po_price * (1 + self.p.price_tolerance_pct) + 0.005:
+                # exact comparison: an absolute rounding slack would let low-priced lines exceed the bound
+                if ln.unit_price > po_price * (1 + self.p.price_tolerance_pct) + 1e-9:
                     d.flags.append("price_above_tolerance")
                     full = False
                     continue
-                if ln.unit_price > po_price + 0.005:
+                if ln.unit_price > po_price + 1e-9:
                     d.flags.append("price_variance")       # inside tolerance: paid, but raises risk
                 avail = max(0.0, self.s.available_qty(po.po_id, ln.line_no))
                 q = min(ln.qty, avail * (1 + self.p.qty_tolerance_pct))
@@ -206,7 +207,7 @@ class ControlsChecker:
         if self.p.first_payment_hold and not rec["first_payment_done"]:
             d.flags.append("first_payment")
             d.controls.append("first_payment_hold")
-        vop = self.s.bank.verify_payee(d.iban, prop.supplier_id)
+        vop = self.s.bank.verify_payee(d.iban, prop.supplier_id) if self.p.vop_enabled else "not_checked"
         d.risk_features["vop"] = vop
         if vop == "no_match":
             d.flags.append("vop_no_match")

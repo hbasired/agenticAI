@@ -29,6 +29,7 @@ class PolicyPack:
     # vendor-master change control
     cooling_off_days: int = 3
     require_callback: bool = True
+    vop_enabled: bool = True                  # consult Verification of Payee at all (CGA controls only)
     vop_block_on_no_match: bool = True
     # supplier onboarding
     first_payment_hold: bool = True

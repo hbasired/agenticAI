@@ -57,6 +57,8 @@ class Episode:
         self.items = {it.item_id: it for it in world.items}
         self.rec: dict[str, dict] = {}
         self.intents: dict[str, Intent] = {}
+        self.first_divert: dict[str, int] = {}   # supplier -> day of first payment that went astray
+        self.complained: set[str] = set()
 
     # ------------------------------------------------------------------ bookkeeping
     def record(self, item_id: str, **kw) -> None:
@@ -80,6 +82,10 @@ class Episode:
                   invoice_number: str = "", total: float | None = None, control: str = "agent") -> None:
         if amount == 0:
             return
+        rec = self.state.vendor.get(supplier_id or "")
+        if iban_source_item is None and rec is not None and ids.normalise_iban(iban) == rec["iban"] \
+                and rec.get("iban_source_item") and self.state.bank.owner(rec["iban"]) != supplier_id:
+            iban_source_item = rec["iban_source_item"]   # attribute to the item that poisoned master data
         p = PaymentInstruction(item.item_id, supplier_id, round(amount, 2), ids.normalise_iban(iban), po_ref, origin,
                                self.state.day, iban_source, iban_source_item)
         self.state.queue_payment(p, control)
@@ -110,7 +116,12 @@ class Episode:
             self.tickets_and_review(day, len(todays))
             self.revert_poison(day)
             if day % 5 == pol.payment_weekday or day == self.w.n_days - 1:
+                before = len(self.state.ledger)
                 self.state.payment_run(day)
+                for p in self.state.ledger[before:]:
+                    payee = self.items[p.item_id].truth.payee_supplier_id
+                    if p.amount > 0 and payee in self.w.suppliers and self.state.bank.owner(p.iban) != payee:
+                        self.first_divert.setdefault(payee, day)
         return EpisodeResult(self.cfg.name, list(self.state.ledger), self.state, self.rec, self.w, self.p, self.intents)
 
     # ------------------------------------------------------------------ per item
@@ -393,6 +404,17 @@ class Episode:
                        invoice_number=prop.invoice_number, total=prop.total, control="human")
 
     def revert_poison(self, day: int) -> None:
+        # a genuine supplier that stops receiving money complains after the detection lag,
+        # whichever channel diverted it: AP restores master data and quarantines contaminating notes
+        for sid, d0 in self.first_divert.items():
+            if sid in self.complained or day - d0 < self.p.detection_lag:
+                continue
+            self.complained.add(sid)
+            if self.state.bank.owner(self.state.vendor[sid]["iban"]) != sid:
+                self.state.set_bank(sid, self.state.genuine_iban(sid), "supplier_complaint", "complaint", day)
+            for n in self.state.notes_for(sid):
+                if n["iban"] and self.state.bank.owner(n["iban"]) != sid:
+                    n["disputed"] = True
         for ev in self.state.poison_events:
             if ev.get("reverted") or ev["via"] == "complaint":
                 continue

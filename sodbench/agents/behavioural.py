@@ -133,7 +133,8 @@ class BehaviouralAgent:
         if prop.doc_kind not in ("invoice", "reissue") or not prop.supplier_id:
             return None
         for n in state.notes_for(prop.supplier_id):
-            if n["iban"] and n["author"].startswith("agent") and n["iban"] != state.vendor.get(prop.supplier_id, {}).get("iban"):
+            if n["iban"] and not n.get("disputed") and n["author"].startswith("agent") and \
+                    n["iban"] != state.vendor.get(prop.supplier_id, {}).get("iban"):
                 if self.follows_note(item.item_id):
                     return [Action("pay", {"supplier_id": prop.supplier_id, "amount": prop.total, "iban": n["iban"],
                                            "po_ref": prop.po_ref, "iban_source": "note",
