@@ -103,3 +103,106 @@
 2510.06445 Survey agentic security
 2610.40714 PrivacyFlow
 2607.18485 Trusted credentials untrusted behavior HPC
+# --- literature round 3 (Nov 2026): concept and technique references, recent work preferred ---
+2501.10868 JSONSchemaBench
+2608.03065 Efficient grammar-constrained decoding
+2512.23712 STED structured output reliability
+2611.00138 Kerkoporta structured-output backdoors
+2502.13527 Prefix-tree structured output jailbreak
+2607.24343 Role-stratified conformal risk control tool calls
+2610.05563 G-CARB conformal agent risk budget
+2605.23909 Confidence calibration in LLMs
+2610.22807 Position bias comprehensive study
+2607.24869 Order sensitivity exploitable attack surface
+2606.04329 Untrusted input to trusted memory poisoning study
+2609.13889 Persistent memory poisoning harness agents
+2603.20357 Memory poisoning secure multi-agent systems
+2508.13220 MCPSecBench
+2510.15994 MCP Security Bench
+2602.01129 SMCP secure MCP
+2504.16902 Secure A2A application
+2609.10871 A2ABreak
+2609.33924 A2A-ForensicTrace
+2610.26624 TCP/IP to MCP governance lessons
+2602.11327 Threat modeling MCP A2A Agora
+2501.15145 PromptShield
+2604.12284 WebAgentGuard
+2607.22545 Semalith classifier
+2509.06595 LLMs in cybersecurity human decision loop
+2604.04333 Automation bias vs algorithm aversion
+2609.20110 Calibrated confidence STP financial documents
+2604.25927 Electricity invoices extraction LLMs
+2511.05547 Invoice extraction LLM OCR
+2508.03754 Synthetic invoices layout-preserving
+2506.02153 Small language models future agentic AI
+2604.19299 Deployment trade-offs SLMs agent paradigms
+2507.16459 Company policy adherence agentic workflows
+2606.26524 VIGIL runtime enforcement
+2610.31062 SCOPE NL policies to predicate programs
+2603.19328 Verifier tax
+2608.03609 Formal verification agentic systems operational data
+2610.34887 NumTrace number provenance financial agents
+2604.05485 Auditable agents
+2610.18230 Verifiable agent insurance
+2511.22189 Security awareness HR and accounting
+2509.00005 Per-sender classifiers email authorship
+2601.02914 Audio biometric deepfake vulnerabilities
+2506.07363 Deepfake commoditization digital trust
+2610.08951 ASPIRE PI red-teaming engine
+2606.23927 RIFT-Bench dynamic red-teaming
+2503.15754 AutoRedTeamer
+2601.10156 ToolSafe step-level guardrail
+2502.11448 AGrail lifelong guardrail
+2607.02577 Validity audit tool-calling evaluation
+2611.08417 Benchmarks as software
+2605.05868 SkillScope least privilege
+2605.10763 MATRA attack surface agentic AI
+2509.08646 Secure plan-then-execute guide
+2606.04903 Provably auditable agents ontologies
+2604.09443 Many-tier instruction hierarchy
+2505.18907 Stronger instruction hierarchy enforcement
+2508.11416 AIM-Bench inventory manager biases
+2609.37658 EnterpriseBench
+2604.04426 ShieldNet supply-chain injections
+2604.23374 Ghost in the Agent IFT
+2605.07836 Unsafe by Flow MCP data-flow
+2607.23999 ContainmentBench
+2610.05640 Can CaMeLs Talk multi-agent
+2609.18674 CaMeLoT temporal logic
+2609.37196 ToolFence authorization
+2602.20214 Right to History verifiable execution
+2610.40071 Agentic process evidence
+2606.26298 Governing actions not agents attestation
+2506.13989 AMLgentex
+2509.18499 Hybrid synthetic AML data
+2607.27275 Quantized LLM agents error budget
+2608.22472 Small reasoning models function calling
+2509.25974 OIDC-A agent identity
+2509.13597 Agentic JWT
+2606.03518 Compositional authorization delegation scope
+2609.06500 CAPMAS capability delegation
+2607.09970 AI voice phishing automation
+2507.21538 Self-evolving phishing LLM GA
+2607.19396 CrackedPDFs hidden PI PDFs
+2508.17884 PhantomLint hidden prompts documents
+2512.23684 Hidden PI academic reviewing
+2507.02699 Your Mailbox Is Mine email agents
+2609.30657 PI detection email agents attack chain
+2509.19489 Estimating self-consistency
+2511.14136 Beyond accuracy enterprise agentic evaluation
+2608.00805 AgentSLABench resource constraints
+# classic arXiv origins for techniques used
+2203.11171 Self-consistency (Wang et al.)
+2210.03629 ReAct
+2302.04761 Toolformer
+2111.09543 DeBERTaV3
+2107.07511 Gentle introduction to conformal prediction
+2307.03172 Lost in the middle
+2307.09702 Outlines efficient guided generation
+2411.15100 XGrammar
+2505.09388 Qwen3 technical report
+2503.19786 Gemma 3 technical report
+2508.10925 gpt-oss model card
+1810.03993 Model cards
+2411.12990 BetterBench
+2412.00586 Automated spear phishing LLMs (Heiding)

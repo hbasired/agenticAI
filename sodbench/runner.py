@@ -162,13 +162,27 @@ class Episode:
 
     # D6 family ----------------------------------------------------------
     def process_typed(self, item: InboxItem, meta: dict) -> None:
-        intent = self.agent.make_proposal(self.w, self.state, item)
+        if self.cfg.structured_extraction and item.channel == "ubl" and item.doc is not None:
+            # structured e-invoice: fields are parsed by deterministic code; free text never reaches a model
+            intent = Intent(item.item_id, proposal=faithful_proposal(self.w, self.state, item), deceived=False)
+        else:
+            intent = self.agent.make_proposal(self.w, self.state, item, tolerance=self.tolerance_for(item))
         self.intents[item.item_id] = intent
         self.record(item.item_id, deceived=intent.deceived)
         prop = intent.proposal
         d = self.checker.check(prop, meta)
         self.record(item.item_id, controls=set(d.controls), flags=set(d.flags))
         self.apply_decision(item, prop, d, intent)
+
+    def tolerance_for(self, item: InboxItem) -> float:
+        """Price tolerance the active policy grants the item's supplier (used by the worst-case maker)."""
+        pol = self.cfg.policy
+        if pol.price_policy == "tolerance":
+            return pol.price_tolerance_pct
+        if pol.price_policy == "po_price":
+            return 0.0
+        rec = self.state.vendor.get(item.truth.payee_supplier_id or "", {})
+        return pol.group_tolerance.get(rec.get("tolerance_group", "standard"), 0.0)
 
     def apply_decision(self, item: InboxItem, prop: Proposal, d: Decision, intent: Intent | None) -> None:
         risk = risk_score(d.flags)
@@ -192,6 +206,10 @@ class Episode:
                 return
             self.queue_pay(item, prop.supplier_id, d.amount, d.iban, prop.po_ref, "auto", d.iban_source,
                            alloc=d.alloc, invoice_number=prop.invoice_number, total=prop.total, control="checker")
+            if d.variance > 0:
+                self.record(item.item_id, variance_held=True)
+                self.escalate(item, "variance", max(risk, 0.3), "price variance to buyer approval",
+                              {"amount": d.variance, "po_ref": prop.po_ref, "supplier_id": prop.supplier_id})
             if d.action == "short_pay":
                 self.record(item.item_id, outcome="short_pay")
             return
@@ -378,6 +396,18 @@ class Episode:
         item = self.items[e.item_id]
         t = item.truth
         self.record(item.item_id, human=True)
+        if e.kind == "variance":
+            # the buyer confirms whether the price difference was agreed (habitual surcharge) or not
+            sid = e.payload["supplier_id"]
+            sup = self.w.suppliers.get(sid)
+            agreed = (not t.is_attack) and sup is not None and sup.surcharge > 0
+            if agreed or (t.is_attack and self.rng.random() < self.p.human_miss):
+                rec = self.state.vendor[sid]
+                self.queue_pay(item, sid, e.payload["amount"], rec["iban"], e.payload["po_ref"], "human", "master",
+                               control="variance-approved")
+            else:
+                self.record(item.item_id, controls={"price_variance_control"}, outcome="variance_rejected")
+            return
         if e.kind == "onboarding":
             sid = t.payee_supplier_id
             if sid in self.w.pending_suppliers and not t.is_attack:

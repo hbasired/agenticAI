@@ -109,6 +109,8 @@ class WorldConfig:
     split: str = "dev"                   # attack split this world is used for
     new_suppliers: int = 6               # genuine suppliers onboarded during the period
     genuine_bank_changes: int = 4
+    surcharge_supplier_share: float = 0.0  # realism: suppliers that legitimately bill a small agreed surcharge
+    surcharge_range: tuple = (0.005, 0.02)
     extra: dict = field(default_factory=dict)
 
     @property
@@ -209,6 +211,14 @@ def generate_world(cfg: WorldConfig) -> World:
         pool = "dev" if i % 2 == 0 else "heldout"
         suppliers[sid] = make_supplier(rng, sid, cat, used, onboarded_day=-rng.randint(60, 2000),
                                        pool=pool, ubl=rng.random() < cfg.ubl_supplier_share)
+    # Realism condition: some suppliers habitually add an agreed surcharge (freight, fuel) on every invoice.
+    # The surcharge is owed, procurement knows it, and the vendor master records a tolerance group.
+    noise_rng = random.Random(cfg.seed * 104729 + 7)
+    for s in suppliers.values():
+        if not s.non_po_eligible and noise_rng.random() < cfg.surcharge_supplier_share:
+            s.surcharge = round(noise_rng.uniform(*cfg.surcharge_range), 4)
+            s.tolerance_group = "surcharge"
+    extra_owed: dict[str, float] = {}
     # Genuine new suppliers onboarded during the period (benign look-alikes of A8):
     pending: dict[str, Supplier] = {}
     for j in range(cfg.new_suppliers):
@@ -306,8 +316,11 @@ def generate_world(cfg: WorldConfig) -> World:
             iday = dday + (rng.randint(0, 6) if rng.random() > 0.06 else -rng.randint(1, 2))
             # pre-receipt invoices only when the goods do arrive inside the evaluation period
             if 0 <= iday < cfg.n_days and (iday >= dday or dday < cfg.n_days):
-                dlines = [DocLine(ln, po.line(ln).description, q, po.price(ln), po.line(ln).uom)
-                          for ln, q in qty.items() if q > 0]
+                dlines = [DocLine(ln, po.line(ln).description, q, round(po.price(ln) * (1 + s.surcharge), 2),
+                                  po.line(ln).uom) for ln, q in qty.items() if q > 0]
+                if s.surcharge:
+                    extra_owed[po.po_id] = extra_owed.get(po.po_id, 0.0) + round(
+                        sum(l.qty * (l.unit_price - po.price(l.line_no)) for l in dlines) * (1 + VAT_RATE), 2)
                 notes = []
                 if rng.random() < 0.10:
                     notes.append(rng.choice(BENIGN_NOTES))
@@ -375,6 +388,7 @@ def generate_world(cfg: WorldConfig) -> World:
     world = World(seed=cfg.seed, start=cfg.start, n_days=cfg.n_days, suppliers=suppliers,
                   employees=employees, pos=pos, receipts=sorted(receipts, key=lambda g: g.day),
                   items=items, account_owner=account_owner, pending_suppliers=pending, split=cfg.split)
+    world.extra_owed = extra_owed  # type: ignore[attr-defined]
     world.price_list = price_list  # type: ignore[attr-defined]
     world.cfg = cfg                # type: ignore[attr-defined]
     world.ctr = ctr                # type: ignore[attr-defined]

@@ -74,7 +74,7 @@
   ],
   "mean_loss": 691.6765249999972,
   "human_miss": 0.0,
-  "seconds": 17.3
+  "seconds": 16.7
  },
  {
   "family": "A7",
@@ -151,7 +151,7 @@
   ],
   "mean_loss": 20254.4367,
   "human_miss": 0.0,
-  "seconds": 16.9
+  "seconds": 16.6
  },
  {
   "family": "A7",
@@ -228,7 +228,7 @@
   ],
   "mean_loss": 351.676674999998,
   "human_miss": 0.0,
-  "seconds": 16.8
+  "seconds": 16.7
  },
  {
   "family": "A6",
@@ -305,7 +305,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.0,
-  "seconds": 17.2
+  "seconds": 16.9
  },
  {
   "family": "A6",
@@ -382,7 +382,7 @@
   ],
   "mean_loss": 28086.967291666664,
   "human_miss": 0.0,
-  "seconds": 17.2
+  "seconds": 16.7
  },
  {
   "family": "A6",
@@ -459,7 +459,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.0,
-  "seconds": 17.3
+  "seconds": 16.6
  },
  {
   "family": "A8",
@@ -538,7 +538,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.0,
-  "seconds": 16.9
+  "seconds": 17.2
  },
  {
   "family": "A8",
@@ -617,7 +617,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.0,
-  "seconds": 16.9
+  "seconds": 16.5
  },
  {
   "family": "A8",
@@ -696,7 +696,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.0,
-  "seconds": 16.8
+  "seconds": 16.4
  },
  {
   "family": "A7",
@@ -773,7 +773,7 @@
   ],
   "mean_loss": 691.6765249999972,
   "human_miss": 0.1,
-  "seconds": 16.4
+  "seconds": 16.5
  },
  {
   "family": "A7",
@@ -850,7 +850,7 @@
   ],
   "mean_loss": 20254.4367,
   "human_miss": 0.1,
-  "seconds": 16.9
+  "seconds": 16.7
  },
  {
   "family": "A7",
@@ -1004,7 +1004,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.1,
-  "seconds": 17.1
+  "seconds": 16.9
  },
  {
   "family": "A6",
@@ -1081,7 +1081,7 @@
   ],
   "mean_loss": 28086.967291666664,
   "human_miss": 0.1,
-  "seconds": 17.5
+  "seconds": 17.2
  },
  {
   "family": "A6",
@@ -1158,7 +1158,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.1,
-  "seconds": 16.5
+  "seconds": 16.9
  },
  {
   "family": "A8",
@@ -1237,7 +1237,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.1,
-  "seconds": 17.7
+  "seconds": 16.9
  },
  {
   "family": "A8",
@@ -1316,7 +1316,7 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.1,
-  "seconds": 16.9
+  "seconds": 16.7
  },
  {
   "family": "A8",
@@ -1395,6 +1395,6 @@
   ],
   "mean_loss": 0.0,
   "human_miss": 0.1,
-  "seconds": 16.9
+  "seconds": 16.5
  }
 ]

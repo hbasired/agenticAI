@@ -24,6 +24,7 @@ class ConfigSpec:
     human_all: bool = False      # D5: a human approves every payment
     advisory: bool = False       # D6c: controls offered as an optional tool only
     naive_sod: bool = False      # D7: two LLM sessions with a free-text hand-off
+    structured_extraction: bool = False  # CGA v0.3: UBL e-invoices parsed by deterministic code, not an LLM
     policy: PolicyPack = field(default_factory=PolicyPack)
     llm_calls_per_item: float = 1.0
     source: str = ""
@@ -57,3 +58,18 @@ def all_configs() -> dict[str, ConfigSpec]:
 
 
 INJECTION_SENSITIVE = {"A1", "A2", "A3", "A9"}   # families whose success relies on instructions in content
+
+
+def cga_versions() -> dict[str, ConfigSpec]:
+    """Frozen CGA design versions used in the benchmark campaign (see docs/benchmarks.md)."""
+    base = PolicyPack()
+    return {
+        "v0.1": ConfigSpec("D6-v0.1", "CGA v0.1: global 2 % price tolerance", typed=True, tools=frozenset(),
+                           policy=base, source="this work"),
+        "v0.2": ConfigSpec("D6-v0.2", "CGA v0.2: pay PO price, route every price variance to the buyer", typed=True,
+                           tools=frozenset(), policy=replace(base, price_policy="po_price"), source="this work"),
+        "v0.3": ConfigSpec("D6-v0.3", "CGA v0.3: vendor tolerance groups + deterministic UBL extraction", typed=True,
+                           tools=frozenset(), policy=replace(base, price_policy="vendor_groups"),
+                           structured_extraction=True, source="this work"),
+    }
+

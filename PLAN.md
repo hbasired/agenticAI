@@ -75,3 +75,14 @@ covers the build work of weeks 1 to 6 and a first, honest set of measurements:
   testing, invisible to the SMT proof of the abstract model); a time-of-check-to-
   time-of-use race in which a near-duplicate could be auto-paid while the original
   waited for human review (fixed by reserving matched quantities at escalation).
+- 2026-11-07 (evening): Benchmark targets pre-registered (docs/benchmarks.md,
+  commit 3655400) before the confirmatory campaign. Realism condition added
+  (agreed supplier surcharges in vendor tolerance groups). Three frozen CGA
+  versions evaluated once each on ten fresh held-out worlds: v0.1 (global 2 %
+  tolerance) fails X3; v0.2 (pay PO price, all variances to the buyer) fails X2,
+  O1, O2, O3, O6; v0.3 (vendor tolerance groups + deterministic UBL parsing)
+  passes all fifteen targets and the robustness sweep under the stated conditions; X3 is narrowly missed (10.8 % > 10 %) if the attacker knows the vendor tolerance groups. Development-world results
+  and every evaluation are in results/benchmark_ledger.csv. Bibliography grown to
+  299 entries (150 from 2025-2026). Interim report generated from scratch in the
+  proposal's format: report/output/.
+

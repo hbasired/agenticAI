@@ -34,6 +34,8 @@ class Supplier:
     onboarded_day: int          # negative = before the simulated period
     pool: str                   # "dev" or "heldout": which attack split may target it
     first_payment_done: bool = True
+    surcharge: float = 0.0              # habitual, agreed surcharge on every invoice (owed; realism condition)
+    tolerance_group: str = "standard"   # vendor tolerance group in master data ("standard" | "surcharge")
     invoice_style: str = "INV-{n:04d}"
     invoice_prefix: str = "AB"
     next_invoice_no: int = 1000
