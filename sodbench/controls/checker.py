@@ -41,6 +41,7 @@ class Decision:
     controls: list[str] = field(default_factory=list)
     alloc: dict = field(default_factory=dict)          # (po, line) -> qty approved
     risk_features: dict = field(default_factory=dict)
+    variance: float = 0.0                              # price variance (gross) routed to buyer approval
 
 
 def _lev(a: str, b: str) -> int:
@@ -158,12 +159,18 @@ class ControlsChecker:
                     full = False
                     continue
                 po_price = po.price(ln.line_no)
-                # exact comparison: an absolute rounding slack would let low-priced lines exceed the bound
-                if ln.unit_price > po_price * (1 + self.p.price_tolerance_pct) + 1e-9:
+                if self.p.price_policy == "tolerance":
+                    tol = self.p.price_tolerance_pct
+                elif self.p.price_policy == "vendor_groups":
+                    tol = self.p.group_tolerance.get(rec.get("tolerance_group", "standard"), 0.0)
+                else:                                   # "po_price"
+                    tol = 0.0
+                over = ln.unit_price > po_price * (1 + tol) + 1e-9   # exact: no absolute rounding slack
+                if over and self.p.price_policy == "tolerance":
                     d.flags.append("price_above_tolerance")
                     full = False
                     continue
-                if ln.unit_price > po_price + 1e-9:
+                if ln.unit_price > po_price + 1e-9 and not over:
                     d.flags.append("price_variance")       # inside tolerance: paid, but raises risk
                 avail = max(0.0, self.s.available_qty(po.po_id, ln.line_no))
                 q = min(ln.qty, avail * (1 + self.p.qty_tolerance_pct))
@@ -172,7 +179,15 @@ class ControlsChecker:
                     full = False
                 if q > 0:
                     alloc[(po.po_id, ln.line_no)] = q
-                    net += q * ln.unit_price
+                    if over:                            # pay the undisputed PO price; route the variance to the buyer
+                        net += q * po_price
+                        d.variance += round(q * (ln.unit_price - po_price) * (1 + VAT), 2)
+                        if "price_variance_held" not in d.flags:
+                            d.flags.append("price_variance_held")
+                            d.controls.append("price_variance_control")
+                        full = False
+                    else:
+                        net += q * ln.unit_price
             amount = round(net * (1 + VAT), 2)
             d.controls.append("three_way_match")
             if amount <= 0:
@@ -228,7 +243,7 @@ RISK_WEIGHTS = {
     "instruction_text": 1.8, "urgency": 0.6, "claims_verified": 1.5, "price_variance": 1.1, "qty_exceeds_received": 0.9,
     "awaiting_receipt": 0.2, "price_above_tolerance": 1.4, "duplicate_exact": 2.0, "duplicate_fuzzy": 2.0,
     "unknown_supplier": 2.0, "first_payment": 0.8, "po_invalid": 1.5, "non_po_approval": 0.6, "non_po_over_limit": 1.0,
-    "vop_close_match": 1.8, "vop_no_match": 2.5, "release_threshold": 0.3,
+    "vop_close_match": 1.8, "vop_no_match": 2.5, "release_threshold": 0.3, "price_variance_held": 1.0,
 }
 
 

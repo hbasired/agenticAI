@@ -68,57 +68,182 @@
 [120] A. N. Angelopoulos, S. Bates, A. Fisch, L. Lei, and T. Schuster, "Conformal Risk Control," in Proc. ICLR, 2024; arXiv:2208.02814.
 [121] C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, "On Calibration of Modern Neural Networks," in Proc. ICML, 2017; arXiv:1706.04599.
 [122] H. Yang, B. Zhang, N. Wang, C. Guo, X. Zhang, L. Lin et al., "FinRobot: An Open-Source AI Agent Platform for Financial Applications using Large Language Models," arXiv:2405.14767, 2024.
-[123] J. H. Saltzer and M. D. Schroeder, "The protection of information in computer systems," Proc. IEEE, vol. 63, no. 9, pp. 1278-1308, 1975.
-[124] D. D. Clark and D. R. Wilson, "A comparison of commercial and military computer security policies," in Proc. IEEE Symposium on Security and Privacy, 1987, pp. 184-194.
-[125] K. J. Biba, "Integrity considerations for secure computer systems," MITRE Corp., Tech. Rep. MTR-3153, 1977.
-[126] D. F. C. Brewer and M. J. Nash, "The Chinese Wall security policy," in Proc. IEEE Symposium on Security and Privacy, 1989, pp. 206-214.
-[127] D. E. Denning, "A lattice model of secure information flow," Communications of the ACM, vol. 19, no. 5, pp. 236-243, 1976.
-[128] J. A. Goguen and J. Meseguer, "Security policies and security models," in Proc. IEEE Symposium on Security and Privacy, 1982, pp. 11-20.
-[129] A. Sabelfeld and A. C. Myers, "Language-based information-flow security," IEEE Journal on Selected Areas in Communications, vol. 21, no. 1, pp. 5-19, 2003.
-[130] N. Hardy, "The confused deputy (or why capabilities might have been invented)," ACM SIGOPS Operating Systems Review, vol. 22, no. 4, pp. 36-38, 1988.
-[131] R. S. Sandhu, E. J. Coyne, H. L. Feinstein, and C. E. Youman, "Role-based access control models," IEEE Computer, vol. 29, no. 2, pp. 38-47, 1996.
-[132] D. F. Ferraiolo, R. Sandhu, S. Gavrila, D. R. Kuhn, and R. Chandramouli, "Proposed NIST standard for role-based access control," ACM Transactions on Information and System Security, vol. 4, no. 3, pp. 224-274, 2001.
-[133] R. T. Simon and M. E. Zurko, "Separation of duty in role-based environments," in Proc. 10th IEEE Computer Security Foundations Workshop, 1997, pp. 183-194.
-[134] N. Li, M. V. Tripunitara, and Z. Bizri, "On mutually exclusive roles and separation-of-duty," ACM Transactions on Information and System Security, vol. 10, no. 2, 2007.
-[135] E. Bertino, E. Ferrari, and V. Atluri, "The specification and enforcement of authorization constraints in workflow management systems," ACM Transactions on Information and System Security, vol. 2, no. 1, pp. 65-104, 1999.
-[136] L. de Moura and N. Bjørner, "Z3: An efficient SMT solver," in Proc. TACAS, LNCS vol. 4963, 2008, pp. 337-340.
-[137] D. R. MacIver, Z. Hatfield-Dodds et al., "Hypothesis: A new approach to property-based testing," Journal of Open Source Software, vol. 4, no. 43, p. 1891, 2019.
-[138] Committee of Sponsoring Organizations of the Treadway Commission (COSO), "Achieving effective internal control over generative AI (GenAI)," Feb. 2026. [Online]. Available: https://www.coso.org
-[139] National Institute of Standards and Technology, Center for AI Standards and Innovation, "AI Agent Standards Initiative," Feb. 17, 2026, and "Request for information regarding security considerations for artificial intelligence agents," Federal Register, vol. 91, no. 5, Jan. 8, 2026, Docket NIST-2025-0035.
-[140] National Institute of Standards and Technology, "Design tenets for agent identity management systems," Cybersecurity Insights blog, 2026. [Online]. Available: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems
-[141] European Parliament and Council of the European Union, "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)," Official Journal of the European Union, Jul. 12, 2024.
-[142] National Institute of Standards and Technology, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)," NIST AI 100-1, Jan. 2023.
-[143] National Institute of Standards and Technology, "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile," NIST AI 600-1, Jul. 2024.
-[144] A. Vassilev, A. Oprea, A. Fordyce, H. Anderson, X. Davies, and M. Hamin, "Adversarial machine learning: A taxonomy and terminology of attacks and mitigations," NIST AI 100-2e2025, Mar. 2025.
-[145] ISO/IEC 42001:2023, "Information technology - Artificial intelligence - Management system," International Organization for Standardization, 2023.
-[146] National Institute of Standards and Technology, "Security and privacy controls for information systems and organizations," NIST SP 800-53 Rev. 5, Sep. 2020 (controls AC-5 Separation of Duties and AC-6 Least Privilege).
-[147] Public Company Accounting Oversight Board, "AS 2201: An audit of internal control over financial reporting that is integrated with an audit of financial statements."
-[148] Sarbanes-Oxley Act of 2002, Pub. L. No. 107-204, 116 Stat. 745, Section 404.
-[149] OWASP Foundation, "OWASP Top 10 for LLM Applications 2025," Nov. 2024 (LLM01 Prompt Injection; LLM06 Excessive Agency).
-[150] MITRE, "ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems." [Online]. Available: https://atlas.mitre.org
-[151] Payment Systems Regulator, "Authorised push payment (APP) scams reimbursement requirement," in force Oct. 7, 2024.
-[152] Council of the European Union, "Council Directive (EU) 2025/516 of 11 March 2025 amending Directive 2006/112/EC as regards VAT rules for the digital age," 2025.
-[153] European Committee for Standardization, "EN 16931-1:2017 Electronic invoicing - Part 1: Semantic data model of the core elements of an electronic invoice," 2017.
-[154] OASIS, "Universal Business Language Version 2.1," 2013; published as ISO/IEC 19845:2015.
-[155] OpenPeppol, "PINT AE: United Arab Emirates electronic document specifications, version 1.0.3," 2026. [Online]. Available: https://docs.peppol.eu/poac/ae/v1.0.3/
-[156] ISO 13616-1:2020, "Financial services - International bank account number (IBAN) - Part 1: Structure of the IBAN," 2020.
-[157] Google Cloud, "Announcing Agent Payments Protocol (AP2)," Sep. 16, 2025. [Online]. Available: https://cloud.google.com/blog
-[158] OpenAI and Stripe, "Agentic Commerce Protocol," Sep. 29, 2025. [Online]. Available: https://www.agenticcommerce.dev
-[159] Visa, "Trusted Agent Protocol," Oct. 14, 2025. [Online]. Available: https://usa.visa.com
-[160] Anthropic, "Introducing the Model Context Protocol," Nov. 25, 2024. [Online]. Available: https://www.anthropic.com/news/model-context-protocol
-[161] Google, "Announcing the Agent2Agent Protocol (A2A)," Apr. 9, 2025. [Online]. Available: https://developers.googleblog.com
-[162] Invariant Labs, "MCP security notification: Tool poisoning attacks," Apr. 2025. [Online]. Available: https://invariantlabs.ai/blog
-[163] S. Willison, "The lethal trifecta for AI agents: private data, untrusted content, and external communication," Jun. 16, 2025. [Online]. Available: https://simonwillison.net
-[164] S. Willison, "The Dual LLM pattern for building AI assistants that can resist prompt injection," Apr. 25, 2023. [Online]. Available: https://simonwillison.net
-[165] T. Gebru, J. Morgenstern, B. Vecchione, J. W. Vaughan, H. Wallach, H. Daumé III, and K. Crawford, "Datasheets for datasets," Communications of the ACM, vol. 64, no. 12, pp. 86-92, 2021.
-[166] M. Akhtar et al., "Croissant: A metadata format for ML-ready datasets," in Advances in Neural Information Processing Systems 37 (Datasets and Benchmarks Track), 2024.
-[167] R. T. Rockafellar and S. Uryasev, "Optimization of conditional value-at-risk," Journal of Risk, vol. 2, no. 3, pp. 21-41, 2000.
-[168] B. Efron and R. J. Tibshirani, An Introduction to the Bootstrap. New York: Chapman & Hall, 1993.
-[169] Q. McNemar, "Note on the sampling error of the difference between correlated proportions or percentages," Psychometrika, vol. 12, no. 2, pp. 153-157, 1947.
-[170] ProtectAI, "deberta-v3-base-prompt-injection-v2," model card, Hugging Face, 2024. [Online]. Available: https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2
-[171] J. Freund and J. Jones, Measuring and Managing Information Risk: A FAIR Approach. Oxford: Butterworth-Heinemann, 2014.
-[172] American Institute of Certified Public Accountants, "2017 Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy (with revised points of focus, 2022)."
-[173] The Institute of Internal Auditors, "The IIA's Three Lines Model: An update of the Three Lines of Defense," Jul. 2020.
-[174] A. Betlen et al., "llama-cpp-python: Python bindings for llama.cpp," version 0.3.36, PyPI, Oct. 2026.
+[123] S. Geng, H. Cooper, M. Moskal, S. Jenkins, J. Berman, N. Ranchin et al., "JSONSchemaBench: A Rigorous Benchmark of Structured Outputs for Language Models," arXiv:2501.10868, 2025.
+[124] Y. Li, Y. Dong, J. Li, and G. Li, "Efficient Grammar-Constrained Decoding via Parser Stack Classification," arXiv:2608.03065, 2026.
+[125] G. Wang, J. Yu, X. Zhang, D. Jiang, Y. Song, T. Deb et al., "STED and Consistency Scoring: A Framework for Evaluating LLM Structured Output Reliability," arXiv:2512.23712, 2025.
+[126] G. Syros, B. Bullwinkel, A. Oprea, C. Nita-Rotaru, A. Minnich, X. Liu et al., "Kerkoporta: Injecting Structured-Output Backdoors in Reasoning Coding Agents," arXiv:2611.00138, 2026.
+[127] Y. Li, Y. Xiong, J. Zhong, J. Zhang, J. Zhou, and L. Zou, "Exploiting Prefix-Tree in Structured Output Interfaces for Enhancing Jailbreak Attacking," arXiv:2502.13527, 2025.
+[128] M. A. Rahman, M. A. Rahman, N. H. Samin, K. R. Tasnia, M. H. Amin, S. R. Ahona et al., "Beyond Aggregate Risk: Role-Stratified Conformal Risk Control for LLM Tool Calls," arXiv:2607.24343, 2026.
+[129] Z. Yu, Y. Gu, V. P. Nia, and M. Asgharian, "G-CARB: Graph-Localized Conformal Agent Risk Budget for Compositional Harm," arXiv:2610.05563, 2026.
+[130] N. Michael, D. BenShushan, J. Bien, and D. A. Moore, "Confidence Calibration in Large Language Models," arXiv:2605.23909, 2026.
+[131] Y. Li, H. Li, L. Liu, and T. Watanabe, "On the Position Bias of Large Language Models: A Comprehensive Study," arXiv:2610.22807, 2026.
+[132] G. Zhang, J. Cheng, and H. Chen, "Ranked by Position: Order Sensitivity as an Exploitable Attack Surface in LLM Listwise Recommenders," arXiv:2607.24869, 2026.
+[133] P. Dash, T. Ge, A. Jain, T. Shah, and Z. Shang, "From Untrusted Input to Trusted Memory: A Systematic Study of Memory Poisoning Attacks in LLM Agents," arXiv:2606.04329, 2026.
+[134] S. Huang, J. Zhang, and H. Jia, "When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents," arXiv:2609.13889, 2026.
+[135] V. Torra and M. Bras-Amorós, "Memory poisoning and secure multi-agent systems," arXiv:2603.20357, 2026.
+[136] Y. Yang, C. Gao, D. Wu, Y. Chen, Y. Li, and S. Wang, "MCPSecBench: A Systematic Security Benchmark and Playground for Testing Model Context Protocols," arXiv:2508.13220, 2025.
+[137] D. Zhang, Z. Li, X. Luo, X. Liu, P. Li, and W. Xu, "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents," arXiv:2510.15994, 2025.
+[138] X. Hou, S. Wang, Y. Zhang, Z. Xue, Y. Zhao, C. Fu et al., "SMCP: Secure Model Context Protocol," arXiv:2602.01129, 2026.
+[139] I. Habler, K. Huang, V. S. Narajala, and P. Kulkarni, "Building A Secure Agentic AI Application Leveraging A2A Protocol," arXiv:2504.16902, 2025.
+[140] A. Lotfi, M. M. Rahman, I. Karim, and E. Bertino, "A2ABreak: Systematic Security Analysis of the A2A Protocol," arXiv:2609.10871, 2026.
+[141] A. Alshammari, S. Assiri, and H. Bahsi, "A2A-ForensicTrace: Offline Verification of Tamper-Evident A2A Runtime Evidence," arXiv:2609.33924, 2026.
+[142] B. Bucknall, A. Byrley, and L. Hammond, "From TCP/IP to MCP: Security and Governance Lessons from Internet Protocols for Agentic AI," arXiv:2610.26624, 2026.
+[143] Z. Anbiaee, M. Rabbani, M. Mirani, G. Piya, I. Opushnyev, A. Ghorbani et al., "Security Threat Modeling for Emerging AI-Agent Protocols: A Comparative Analysis of MCP, A2A, Agora, and ANP," arXiv:2602.11327, 2026.
+[144] D. Jacob, H. Alzahrani, Z. Hu, B. Alomair, and D. Wagner, "PromptShield: Deployable Detection for Prompt Injection Attacks," arXiv:2501.15145, 2025.
+[145] Y. Chen, T. Cao, H. Li, Y. Li, Y. Liu, Y. He et al., "WebAgentGuard: A Reasoning-Driven Guard Model for Detecting Prompt Injection Attacks in Web Agents," arXiv:2604.12284, 2026.
+[146] T. C. Addagada, "Semalith v1.4: A Calibrated 184M Safety Classifier Achieving State-of-the-Art Prompt-Injection Detection at 44x Fewer Parameters than Llama-Guard-3-8B," arXiv:2607.22545, 2026.
+[147] I. Pekaric, P. Zech, and T. Mattson, "LLMs in Cybersecurity: Friend or Foe in the Human Decision Loop?," arXiv:2509.06595, 2025.
+[148] Y. Jin, Y. Wang, Y. Han, K. C. Y. Sonia, W. Song, C. J. Kent et al., "Perception, Layout, and Validation: Calibrated Confidence for Reliable Straight-Through Processing of Financial Documents," arXiv:2609.20110, 2026.
+[149] J. Gómez and J. Sánchez, "Information Extraction from Electricity Invoices with General-Purpose Large Language Models," arXiv:2604.25927, 2026.
+[150] K. Khanchandani, A. Thakur, A. Shetty, C. Reddy, and R. Behera, "Automated Invoice Data Extraction: Using LLM and OCR," arXiv:2511.05547, 2025.
+[151] B. V, A. P, R. KR, S. M, V. S, and B. Wilson, "Generating Synthetic Invoices via Layout-Preserving Content Replacement," arXiv:2508.03754, 2025.
+[152] P. Belcak, G. Heinrich, S. Diao, Y. Fu, X. Dong, S. Muralidharan et al., "Small Language Models are the Future of Agentic AI," arXiv:2506.02153, 2025.
+[153] X. Wang and M. Brorsson, "Rethinking Scale: Deployment Trade-offs of Small Language Models under Agent Paradigms," arXiv:2604.19299, 2026.
+[154] N. Zwerdling, D. Boaz, E. Rabinovich, G. Uziel, D. Amid, and A. Anaby-Tavor, "Towards Enforcing Company Policy Adherence in Agentic Workflows," arXiv:2507.16459, 2025.
+[155] Y. Li, Y. Chen, H. Wen, B. Zhang, H. Liu, P. Wang et al., "VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills," arXiv:2606.26524, 2026.
+[156] A. Mazza and E. Levi, "SCOPE: Compiling Natural-Language Policies into Neurosymbolic Predicate Programs," arXiv:2610.31062, 2026.
+[157] T. Sah, V. Srivastava, D. Sah, and K. Jordan, "The Verifier Tax: Horizon Dependent Safety Success Tradeoffs in Tool Using LLM Agents," arXiv:2603.19328, 2026.
+[158] A. J. Mercado and A. Lomuscio, "Formal Verification of Agentic Systems over Operational Data," arXiv:2608.03609, 2026.
+[159] T. Zhu, M. White, X. Liu, and X. Liu, "NumTrace: Auditing the Number Provenance of Financial Analyst Agents," arXiv:2610.34887, 2026.
+[160] Y. Nian, A. Yuan, H. Zhang, J. Li, L. Li, X. Hu et al., "Auditable Agents," arXiv:2604.05485, 2026.
+[161] C. Hua, T. Tsuchiya, N. Christin, and G. Fanti, "Holding Agents Accountable with Verifiable Agent Insurance," arXiv:2610.18230, 2026.
+[162] M. Pfister, G. Apruzzese, and I. Pekaric, "Department-Specific Security Awareness Campaigns: A Cross-Organizational Study of HR and Accounting," arXiv:2511.22189, 2025.
+[163] R. Dube, "Per-sender neural network classifiers for email authorship validation," arXiv:2509.00005, 2025.
+[164] M. Hong, D. Jiang, Z. Xie, W. Zhao, G. Wang, and C. J. Zhang, "Vulnerabilities of Audio-Based Biometric Authentication Systems Against Deepfake Speech Synthesis," arXiv:2601.02914, 2026.
+[165] C. Popa, R. Pallath, L. Cunningham, H. Tahiri, A. Kesavarajah, and T. Wu, "Deepfake Technology Unveiled: The Commoditization of AI and Its Impact on Digital Trust," arXiv:2506.07363, 2025.
+[166] P. He, D. Mitra, V. Sharma, J. Tang, V. S. Rao, T. Pfister et al., "ASPIRE: Agentic Safety & Prompt Injection Red-teaming Engine," arXiv:2610.08951, 2026.
+[167] Y. Y. Levi, R. Betser, A. Giloni, L. Erez, I. Gershon, O. Rachmil et al., "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems," arXiv:2606.23927, 2026.
+[168] A. Zhou, K. Wu, F. Pinto, Z. Chen, Y. Zeng, Y. Yang et al., "AutoRedTeamer: Autonomous Red Teaming with Lifelong Attack Integration," arXiv:2503.15754, 2025.
+[169] Y. Mou, Z. Xue, L. Li, P. Liu, S. Zhang, W. Ye et al., "ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback," arXiv:2601.10156, 2026.
+[170] W. Luo, S. Dai, X. Liu, S. Banerjee, H. Sun, M. Chen et al., "AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection," arXiv:2502.11448, 2025.
+[171] V. Bhat, J. Vaghasiya, M. A. Mohsin, and A. Aali, "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation," arXiv:2607.02577, 2026.
+[172] E. K. Buchanan, C. Zhou, S. W. Linderman, and C. Ré, "Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks," arXiv:2611.08417, 2026.
+[173] J. Wu, Y. Nan, Y. Lin, H. Wang, Y. Xiao, S. Wang et al., "SkillScope: Toward Fine-Grained Least-Privilege Enforcement for Agent Skills," arXiv:2605.05868, 2026.
+[174] T. V. hamme, T. Vissers, J. Carnerero-Cano, M. Fritz, E. C. Lupu, L. Desmet et al., "MATRA: Modeling the Attack Surface of Agentic AI Systems -- OpenClaw Case Study," arXiv:2605.10763, 2026.
+[175] R. F. D. Rosario, K. Krawiecka, and C. S. d. Witt, "Architecting Resilient LLM Agents: A Guide to Secure Plan-then-Execute Implementations," arXiv:2509.08646, 2025.
+[176] A. Sterling, "Provably Auditable and Safe LLM Agents from Human-Authored Ontologies," arXiv:2606.04903, 2026.
+[177] J. Zhang, T. Li, W. Jurayj, H. Zhan, B. V. Durme, and D. Khashabi, "Many-Tier Instruction Hierarchy in LLM Agents," arXiv:2604.09443, 2026.
+[178] S. Kariyappa and G. E. Suh, "Stronger Enforcement of Instruction Hierarchy via Augmented Intermediate Representations," arXiv:2505.18907, 2025.
+[179] X. Zhao, Y. Xie, C. Chen, and Y. Sun, "AIM-Bench: Evaluating Decision-making Biases of Agentic LLM as Inventory Manager," arXiv:2508.11416, 2025.
+[180] M. Yang, Y. Pan, J. Piao, D. Song, Y. Gong, and Y. Li, "EnterpriseBench: Benchmarking LLM Agents on Enterprise-Level Strategic Reasoning and Decision-Making," arXiv:2609.37658, 2026.
+[181] Z. Yuan, Z. Chen, Z. Xiang, N. D. Bastian, S. H. Hashemi, C. Xiao et al., "ShieldNet: Network-Level Guardrails against Emerging Supply-Chain Injections in Agentic Systems," arXiv:2604.04426, 2026.
+[182] Y. Cai, W. Tang, C. Wen, and S. Qin, "Ghost in the Agent: Redefining Information Flow Tracking for LLM Agents," arXiv:2604.23374, 2026.
+[183] X. Hou, Y. Zhao, and H. Wang, "Unsafe by Flow: Uncovering Bidirectional Data-Flow Risks in MCP Ecosystem," arXiv:2605.07836, 2026.
+[184] W. Lan, S. Li, M. Wu, X. Lai, J. Yang, and H. Shen, "ContainmentBench: Trace-Based Evaluation of Post-Exposure Containment in Tool-Using LLM Agents," arXiv:2607.23999, 2026.
+[185] J. Peters-Gill, A. Semler, H. Bartsch, I. Shumailov, and C. S. d. Witt, "Can CaMeLs Talk? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks," arXiv:2610.05640, 2026.
+[186] E. Nikolaou, M. W. Eckhoff, R. Flood, G. Grov, V. Mavroeidis, and D. Aspinall, "CaMeLoT: CaMeL orchestrated with Temporal logic for static verification and liveness," arXiv:2609.18674, 2026.
+[187] Y. Li, X. He, X. Dai, and B. Xiao, "ToolFence: Fine-Grained Authorization for Secure Tool-Using LLM Agents," arXiv:2609.37196, 2026.
+[188] J. Zhang, "Right to History: A Sovereignty Kernel for Verifiable AI Agent Execution," arXiv:2602.20214, 2026.
+[189] Y. Kainan and C. Hershman, "Agentic process evidence," arXiv:2610.40071, 2026.
+[190] J. Salfeld-Nebgen, "Governing Actions, Not Agents: Institutional Attestation as a Governance Model for Autonomous AI Systems," arXiv:2606.26298, 2026.
+[191] J. Östman, E. Callisen, A. Chen, K. Ausmees, E. Gårdh, J. Zamac et al., "AMLgentex: Mobilizing Data-Driven Research to Combat Money Laundering," arXiv:2506.13989, 2025.
+[192] R. Chung, P. N. Sharma, M. Siponen, R. Vadodaria, and L. Smith, "Hybrid Data can Enhance the Utility of Synthetic Data for Training Anti-Money Laundering Models," arXiv:2509.18499, 2025.
+[193] J. Jang, K. Yang, H. Lim, and H. Park, "Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents," arXiv:2607.27275, 2026.
+[194] Y. Taheri, M. H. Heydari, E. Naaman, and A. Fatemi, "Small Reasoning Models are Instruction Followers in Function Calling," arXiv:2608.22472, 2026.
+[195] S. Nagabhushanaradhya, "OpenID Connect for Agents (OIDC-A) 1.0: A Standard Extension for LLM-Based Agent Identity and Authorization," arXiv:2509.25974, 2025.
+[196] A. Goswami, "Agentic JWT: A Secure Delegation Protocol for Autonomous AI Agents," arXiv:2509.13597, 2025.
+[197] A. Ibrahim and Y. Li, "Overlaying Governance: A Compositional Authorization Framework for Delegation and Scope in Agentic AI," arXiv:2606.03518, 2026.
+[198] R. M. Veski, R. Guerraoui, and D. Froelicher, "CAPMAS: Capability-Based Delegation of Privileges in Multi-Agent Systems," arXiv:2609.06500, 2026.
+[199] F. Heiding, C. M. Verdun, S. Lermen, A. Kao, V. Albiero, L. Deason et al., "Evaluating AI Models' Capability to Automate Voice Phishing Attacks," arXiv:2607.09970, 2026.
+[200] S. Sato, T. Ohki, and M. Nishigaki, "Can We End the Cat-and-Mouse Game? Simulating Self-Evolving Phishing Attacks with LLMs and Genetic Algorithms," arXiv:2507.21538, 2025.
+[201] P. Thienpreecha and K. Subramanian, "CrackedPDFs: A Controlled Benchmark for Hidden Prompt Injection in PDFs," arXiv:2607.19396, 2026.
+[202] T. Murray, "PhantomLint: Principled Detection of Hidden LLM Prompts in Structured Documents," arXiv:2508.17884, 2025.
+[203] P. Theocharopoulos, A. Kulkarni, and M. M. -Doss, "Multilingual Hidden Prompt Injection Attacks on LLM-Based Academic Reviewing," arXiv:2512.23684, 2025.
+[204] J. Wu, Y. Nan, J. Wu, Z. Yao, Z. Shi, M. Yang et al., "Your Mailbox Is Mine: Prompt Injection Attacks Against Real-World LLM Email Agents," arXiv:2507.02699, 2025.
+[205] A. Hashmi, D. Patel, and Y. Yin, "Prompt Injection Detection for Email Agents Through Attack Chain Modeling," arXiv:2609.30657, 2026.
+[206] R. Nowak, "Estimating the Self-Consistency of LLMs," arXiv:2509.19489, 2025.
+[207] S. Mehta, "Beyond Accuracy: A Multi-Dimensional Framework for Evaluating Enterprise Agentic AI Systems," arXiv:2511.14136, 2025.
+[208] M. B. Madiraju and M. S. P. Madiraju, "AgentSLABench: Evaluating and Benchmarking Agentic Systems Under Resource Constraints," arXiv:2608.00805, 2026.
+[209] X. Wang, J. Wei, D. Schuurmans, Q. Le, E. Chi, S. Narang et al., "Self-Consistency Improves Chain of Thought Reasoning in Language Models," in Proc. ICLR, 2023; arXiv:2203.11171.
+[210] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan et al., "ReAct: Synergizing Reasoning and Acting in Language Models," in Proc. ICLR, 2023; arXiv:2210.03629.
+[211] T. Schick, J. Dwivedi-Yu, R. Dessì, R. Raileanu, M. Lomeli, L. Zettlemoyer et al., "Toolformer: Language Models Can Teach Themselves to Use Tools," in Advances in Neural Information Processing Systems (NeurIPS), 2023; arXiv:2302.04761.
+[212] P. He, J. Gao, and W. Chen, "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing," in Proc. ICLR, 2023; arXiv:2111.09543.
+[213] A. N. Angelopoulos and S. Bates, "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification," arXiv:2107.07511, 2021.
+[214] N. F. Liu, K. Lin, J. Hewitt, A. Paranjape, M. Bevilacqua, F. Petroni et al., "Lost in the Middle: How Language Models Use Long Contexts," Transactions of the Association for Computational Linguistics, vol. 12, 2024; arXiv:2307.03172.
+[215] B. T. Willard and R. Louf, "Efficient Guided Generation for Large Language Models," arXiv:2307.09702, 2023.
+[216] Y. Dong, C. F. Ruan, Y. Cai, R. Lai, Z. Xu, Y. Zhao et al., "XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models," arXiv:2411.15100, 2024.
+[217] A. Yang, A. Li, B. Yang, B. Zhang, B. Hui, B. Zheng et al., "Qwen3 Technical Report," arXiv:2505.09388, 2025.
+[218] G. Team, A. Kamath, J. Ferret, S. Pathak, N. Vieillard, R. Merhej et al., "Gemma 3 Technical Report," arXiv:2503.19786, 2025.
+[219] OpenAI, :, S. Agarwal, L. Ahmad, J. Ai, S. Altman et al., "gpt-oss-120b & gpt-oss-20b Model Card," arXiv:2508.10925, 2025.
+[220] M. Mitchell, S. Wu, A. Zaldivar, P. Barnes, L. Vasserman, B. Hutchinson et al., "Model Cards for Model Reporting," in Proc. ACM FAT*, 2019; arXiv:1810.03993.
+[221] A. Reuel, A. Hardy, C. Smith, M. Lamparth, M. Hardy, and M. J. Kochenderfer, "BetterBench: Assessing AI Benchmarks, Uncovering Issues, and Establishing Best Practices," in Advances in Neural Information Processing Systems 37 (Datasets and Benchmarks Track), 2024; arXiv:2411.12990.
+[222] F. Heiding, S. Lermen, A. Kao, B. Schneier, and A. Vishwanath, "Evaluating Large Language Models' Capability to Launch Fully Automated Spear Phishing Campaigns: Validated on Human Subjects," arXiv:2412.00586, 2024.
+[223] J. H. Saltzer and M. D. Schroeder, "The protection of information in computer systems," Proc. IEEE, vol. 63, no. 9, pp. 1278-1308, 1975.
+[224] D. D. Clark and D. R. Wilson, "A comparison of commercial and military computer security policies," in Proc. IEEE Symposium on Security and Privacy, 1987, pp. 184-194.
+[225] K. J. Biba, "Integrity considerations for secure computer systems," MITRE Corp., Tech. Rep. MTR-3153, 1977.
+[226] D. F. C. Brewer and M. J. Nash, "The Chinese Wall security policy," in Proc. IEEE Symposium on Security and Privacy, 1989, pp. 206-214.
+[227] D. E. Denning, "A lattice model of secure information flow," Communications of the ACM, vol. 19, no. 5, pp. 236-243, 1976.
+[228] J. A. Goguen and J. Meseguer, "Security policies and security models," in Proc. IEEE Symposium on Security and Privacy, 1982, pp. 11-20.
+[229] A. Sabelfeld and A. C. Myers, "Language-based information-flow security," IEEE Journal on Selected Areas in Communications, vol. 21, no. 1, pp. 5-19, 2003.
+[230] N. Hardy, "The confused deputy (or why capabilities might have been invented)," ACM SIGOPS Operating Systems Review, vol. 22, no. 4, pp. 36-38, 1988.
+[231] R. S. Sandhu, E. J. Coyne, H. L. Feinstein, and C. E. Youman, "Role-based access control models," IEEE Computer, vol. 29, no. 2, pp. 38-47, 1996.
+[232] D. F. Ferraiolo, R. Sandhu, S. Gavrila, D. R. Kuhn, and R. Chandramouli, "Proposed NIST standard for role-based access control," ACM Transactions on Information and System Security, vol. 4, no. 3, pp. 224-274, 2001.
+[233] R. T. Simon and M. E. Zurko, "Separation of duty in role-based environments," in Proc. 10th IEEE Computer Security Foundations Workshop, 1997, pp. 183-194.
+[234] N. Li, M. V. Tripunitara, and Z. Bizri, "On mutually exclusive roles and separation-of-duty," ACM Transactions on Information and System Security, vol. 10, no. 2, 2007.
+[235] E. Bertino, E. Ferrari, and V. Atluri, "The specification and enforcement of authorization constraints in workflow management systems," ACM Transactions on Information and System Security, vol. 2, no. 1, pp. 65-104, 1999.
+[236] L. de Moura and N. Bjørner, "Z3: An efficient SMT solver," in Proc. TACAS, LNCS vol. 4963, 2008, pp. 337-340.
+[237] D. R. MacIver, Z. Hatfield-Dodds et al., "Hypothesis: A new approach to property-based testing," Journal of Open Source Software, vol. 4, no. 43, p. 1891, 2019.
+[238] Committee of Sponsoring Organizations of the Treadway Commission (COSO), "Achieving effective internal control over generative AI (GenAI)," Feb. 2026. Summary consulted: Deloitte DART, "COSO releases publication on internal controls related to generative AI," 2026. [Online]. Available: https://dart.deloitte.com/USDART/home/publications/deloitte/heads-up/2026/coso-internal-controls-generative-ai
+[239] National Institute of Standards and Technology, Center for AI Standards and Innovation, "AI Agent Standards Initiative," Feb. 17, 2026, and "Request for information regarding security considerations for artificial intelligence agents," Federal Register, vol. 91, no. 5, Jan. 8, 2026, Docket NIST-2025-0035. [Online]. Available: https://www.govinfo.gov/content/pkg/FR-2026-01-08/html/2026-00206.htm
+[240] National Institute of Standards and Technology, "Design tenets for agent identity management systems," Cybersecurity Insights blog, 2026. [Online]. Available: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems
+[241] European Parliament and Council of the European Union, "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)," Official Journal of the European Union, Jul. 12, 2024.
+[242] National Institute of Standards and Technology, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)," NIST AI 100-1, Jan. 2023.
+[243] National Institute of Standards and Technology, "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile," NIST AI 600-1, Jul. 2024.
+[244] A. Vassilev, A. Oprea, A. Fordyce, H. Anderson, X. Davies, and M. Hamin, "Adversarial machine learning: A taxonomy and terminology of attacks and mitigations," NIST AI 100-2e2025, Mar. 2025.
+[245] ISO/IEC 42001:2023, "Information technology - Artificial intelligence - Management system," International Organization for Standardization, 2023.
+[246] National Institute of Standards and Technology, "Security and privacy controls for information systems and organizations," NIST SP 800-53 Rev. 5, Sep. 2020 (controls AC-5 Separation of Duties and AC-6 Least Privilege).
+[247] Public Company Accounting Oversight Board, "AS 2201: An audit of internal control over financial reporting that is integrated with an audit of financial statements."
+[248] Sarbanes-Oxley Act of 2002, Pub. L. No. 107-204, 116 Stat. 745, Section 404.
+[249] OWASP Foundation, "OWASP Top 10 for LLM Applications 2025," Nov. 2024 (LLM01 Prompt Injection; LLM06 Excessive Agency).
+[250] MITRE, "ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems."
+[251] Payment Systems Regulator, "Authorised push payment (APP) scams reimbursement requirement," in force Oct. 7, 2024.
+[252] Council of the European Union, "Council Directive (EU) 2025/516 of 11 March 2025 amending Directive 2006/112/EC as regards VAT rules for the digital age," 2025.
+[253] European Committee for Standardization, "EN 16931-1:2017 Electronic invoicing - Part 1: Semantic data model of the core elements of an electronic invoice," 2017.
+[254] OASIS, "Universal Business Language Version 2.1," 2013; published as ISO/IEC 19845:2015.
+[255] OpenPeppol, "PINT AE: United Arab Emirates electronic document specifications, version 1.0.3," 2026. [Online]. Available: https://docs.peppol.eu/poac/ae/v1.0.3/
+[256] ISO 13616-1:2020, "Financial services - International bank account number (IBAN) - Part 1: Structure of the IBAN," 2020.
+[257] Google Cloud, "Announcing Agent Payments Protocol (AP2)," Sep. 16, 2025.
+[258] OpenAI and Stripe, "Agentic Commerce Protocol," Sep. 29, 2025.
+[259] Visa, "Trusted Agent Protocol," Oct. 14, 2025.
+[260] Anthropic, "Introducing the Model Context Protocol," Nov. 25, 2024.
+[261] Google, "Announcing the Agent2Agent Protocol (A2A)," Apr. 9, 2025.
+[262] Invariant Labs, "MCP security notification: Tool poisoning attacks," Apr. 2025.
+[263] S. Willison, "The lethal trifecta for AI agents: private data, untrusted content, and external communication," Jun. 16, 2025.
+[264] S. Willison, "The Dual LLM pattern for building AI assistants that can resist prompt injection," Apr. 25, 2023.
+[265] T. Gebru, J. Morgenstern, B. Vecchione, J. W. Vaughan, H. Wallach, H. Daumé III, and K. Crawford, "Datasheets for datasets," Communications of the ACM, vol. 64, no. 12, pp. 86-92, 2021.
+[266] M. Akhtar et al., "Croissant: A metadata format for ML-ready datasets," in Advances in Neural Information Processing Systems 37 (Datasets and Benchmarks Track), 2024.
+[267] R. T. Rockafellar and S. Uryasev, "Optimization of conditional value-at-risk," Journal of Risk, vol. 2, no. 3, pp. 21-41, 2000.
+[268] B. Efron and R. J. Tibshirani, An Introduction to the Bootstrap. New York: Chapman & Hall, 1993.
+[269] Q. McNemar, "Note on the sampling error of the difference between correlated proportions or percentages," Psychometrika, vol. 12, no. 2, pp. 153-157, 1947.
+[270] ProtectAI, "deberta-v3-base-prompt-injection-v2," model card, Hugging Face, 2024. [Online]. Available: https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2
+[271] J. Freund and J. Jones, Measuring and Managing Information Risk: A FAIR Approach. Oxford: Butterworth-Heinemann, 2014.
+[272] American Institute of Certified Public Accountants, "2017 Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy (with revised points of focus, 2022)."
+[273] The Institute of Internal Auditors, "The IIA's Three Lines Model: An update of the Three Lines of Defense," Jul. 2020.
+[274] A. Betlen et al., "llama-cpp-python: Python bindings for llama.cpp," version 0.3.36, PyPI, Oct. 2026.
+[275] E. B. Wilson, "Probable inference, the law of succession, and statistical inference," Journal of the American Statistical Association, vol. 22, no. 158, pp. 209-212, 1927.
+[276] M. P. Naeini, G. F. Cooper, and M. Hauskrecht, "Obtaining well calibrated probabilities using Bayesian binning," in Proc. AAAI Conference on Artificial Intelligence, 2015.
+[277] V. Vovk, A. Gammerman, and G. Shafer, Algorithmic Learning in a Random World. New York: Springer, 2005.
+[278] V. I. Levenshtein, "Binary codes capable of correcting deletions, insertions, and reversals," Soviet Physics Doklady, vol. 10, no. 8, pp. 707-710, 1966.
+[279] H. P. Luhn, "Computer for verifying numbers," U.S. Patent 2,950,048, 1960.
+[280] R. Parasuraman and D. H. Manzey, "Complacency and bias in human use of automation: An attentional integration," Human Factors, vol. 52, no. 3, pp. 381-410, 2010.
+[281] M. Bishop and M. Dilger, "Checking for race conditions in file accesses," Computing Systems, vol. 9, no. 2, pp. 131-152, 1996.
+[282] S. A. Crosby and D. S. Wallach, "Efficient data structures for tamper-evident logging," in Proc. 18th USENIX Security Symposium, 2009.
+[283] S. Haber and W. S. Stornetta, "How to time-stamp a digital document," Journal of Cryptology, vol. 3, no. 2, pp. 99-111, 1991.
+[284] B. Laurie, A. Langley, and E. Kasper, "Certificate Transparency," IETF RFC 6962, 2013.
+[285] P. Artzner, F. Delbaen, J.-M. Eber, and D. Heath, "Coherent measures of risk," Mathematical Finance, vol. 9, no. 3, pp. 203-228, 1999.
+[286] P. Jorion, Value at Risk: The New Benchmark for Managing Financial Risk, 3rd ed. New York: McGraw-Hill, 2006.
+[287] B. A. Nosek, C. R. Ebersole, A. C. DeHaven, and D. T. Mellor, "The preregistration revolution," Proceedings of the National Academy of Sciences, vol. 115, no. 11, pp. 2600-2606, 2018.
+[288] J. Reason, "Human error: models and management," BMJ, vol. 320, pp. 768-770, 2000.
+[289] J. B. Dennis and E. C. Van Horn, "Programming semantics for multiprogrammed computations," Communications of the ACM, vol. 9, no. 3, pp. 143-155, 1966.
+[290] M. S. Miller, "Robust composition: Towards a unified approach to access control and concurrency control," Ph.D. dissertation, Johns Hopkins University, 2006.
+[291] J. Newsome and D. Song, "Dynamic taint analysis for automatic detection, analysis, and signature generation of exploits on commodity software," in Proc. NDSS Symposium, 2005.
+[292] W. Enck, P. Gilbert, B.-G. Chun, L. P. Cox, J. Jung, P. McDaniel, and A. N. Sheth, "TaintDroid: An information-flow tracking system for realtime privacy monitoring on smartphones," in Proc. 9th USENIX OSDI, 2010.
+[293] J. Szurdi, B. Kocso, G. Cseh, J. Spring, M. Felegyhazi, and C. Kanich, "The long 'taile' of typosquatting domain names," in Proc. 23rd USENIX Security Symposium, 2014.
+[294] E. Gabrilovich and A. Gontmakher, "The homograph attack," Communications of the ACM, vol. 45, no. 2, p. 128, 2002.
+[295] A. Cidon, L. Gavish, I. Bleier, N. Korshun, M. Schweighauser, and A. Tsitkin, "High precision detection of business email compromise," in Proc. 28th USENIX Security Symposium, 2019.
+[296] B. F. van Dongen, "BPI Challenge 2019," 4TU.ResearchData, event log of a purchase-to-pay process, 2019.
+[297] W. M. P. van der Aalst, Process Mining: Data Science in Action, 2nd ed. Berlin: Springer, 2016.
+[298] M. J. Nigrini, Benford's Law: Applications for Forensic Accounting, Auditing, and Fraud Detection. Hoboken, NJ: Wiley, 2012.
+[299] Unsloth, "Qwen3.5-4B-GGUF," quantised model files (Q4_K_M), Hugging Face, 2026. [Online]. Available: https://huggingface.co/unsloth/Qwen3.5-4B-GGUF
 
-174 references in total (122 new)
+299 references in total (247 new)

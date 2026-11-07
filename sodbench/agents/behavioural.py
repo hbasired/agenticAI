@@ -199,7 +199,8 @@ class BehaviouralAgent:
         return [Action("escalate", {"kind": "payable", "reason": ",".join(d.flags), "decision": d})], 0.8 if suspicious else 0.2
 
     # ------------------------------------------------------------ maker session (D6 family)
-    def make_proposal(self, world: World, state: ERPState, item: InboxItem, s_eff: float | None = None) -> Intent:
+    def make_proposal(self, world: World, state: ERPState, item: InboxItem, s_eff: float | None = None,
+                      tolerance: float | None = None) -> Intent:
         prop = faithful_proposal(world, state, item)
         deceived = self.deceived_on(item, s_eff)
         intent = Intent(item.item_id, proposal=prop, deceived=deceived, suspicion=0.05 if deceived else
@@ -220,7 +221,8 @@ class BehaviouralAgent:
             prop.invoice_number = prop.invoice_number + "-" + str(self.rng.randint(10, 99))  # evade duplicate keys
         elif fam == "A7" and prop.po_ref in world.pos:
             po = world.pos[prop.po_ref]
-            tol = 0.0199
+            # worst case: lie just inside whatever tolerance the active policy grants this supplier
+            tol = max(0.0, (0.02 if tolerance is None else tolerance) - 0.0001)
             prop.lines = [type(l)(l.line_no, l.qty, round(min(l.unit_price, po.price(l.line_no) * (1 + tol)), 2))
                           for l in prop.lines]
             prop.total = round(sum(l.qty * l.unit_price for l in prop.lines) * 1.05, 2)

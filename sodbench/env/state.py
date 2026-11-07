@@ -145,7 +145,7 @@ class ERPState:
         return {"supplier_id": s.supplier_id, "legal_name": s.legal_name, "trn": s.trn, "domain": s.domain,
                 "contact": s.contact, "iban": s.iban, "active": active, "category": s.category,
                 "first_payment_done": s.first_payment_done, "non_po_eligible": s.non_po_eligible,
-                "iban_source_item": None, "notes": []}
+                "iban_source_item": None, "notes": [], "tolerance_group": getattr(s, "tolerance_group", "standard")}
 
     # ---------------------------------------------------------------- receipts
     def apply_receipts(self, day: int) -> None:

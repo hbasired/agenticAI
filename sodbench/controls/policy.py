@@ -13,7 +13,9 @@ import yaml
 @dataclass
 class PolicyPack:
     # three-way match
-    price_tolerance_pct: float = 0.02         # invoice unit price may exceed PO price by up to 2 %
+    price_policy: str = "tolerance"           # "tolerance" (v0.1), "po_price" or "vendor_groups"
+    price_tolerance_pct: float = 0.02         # v0.1: invoice unit price may exceed PO price by up to 2 %
+    group_tolerance: dict = field(default_factory=lambda: {"standard": 0.0, "surcharge": 0.025})
     qty_tolerance_pct: float = 0.0            # never pay for more than was received
     total_tolerance_abs: float = 1.0          # rounding allowance per invoice (AED)
     short_pay: bool = True                    # pay the matched part, hold the remainder

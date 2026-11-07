@@ -58,6 +58,7 @@ def score_episode(res) -> dict:
     for po_id, paid in paid_po.items():
         po = w.pos[po_id]
         owed = sum(max(0.0, received[(po_id, l.line_no)]) * po.price(l.line_no) for l in po.lines) * VAT
+        owed += getattr(w, "extra_owed", {}).get(po_id, 0.0)       # agreed surcharges (realism condition)
         over = paid - owed
         if over > 1.0:
             overpay_po[po_id] = over
@@ -116,7 +117,8 @@ def score_episode(res) -> dict:
     stp_value, held = 0.0, 0
     for it in payable:
         r = res.records.get(it.item_id, {})
-        ok = auto_owned.get(it.item_id, 0.0) >= 0.99 * it.truth.legit_value and not r.get("human", False)
+        ok = (auto_owned.get(it.item_id, 0.0) >= 0.99 * it.truth.legit_value and not r.get("human", False)
+              and not r.get("variance_held", False))
         if ok:
             stp_value += it.truth.legit_value
         else:
