@@ -186,7 +186,9 @@ class Episode:
             self.open_ticket(item, prop.supplier_id, prop.bank_change_iban, prop.claims_verified)
         if d.action in ("pay", "short_pay"):
             if self.p.tau is not None and risk >= self.p.tau:
-                self.escalate(item, "payable", risk, "pre-payment triage", {"decision": d, "proposal": prop})
+                self.reserve(item, prop, d)
+                self.escalate(item, "payable", risk, "pre-payment triage", {"decision": d, "proposal": prop,
+                                                                            "reserved": d.alloc})
                 return
             self.queue_pay(item, prop.supplier_id, d.amount, d.iban, prop.po_ref, "auto", d.iban_source,
                            alloc=d.alloc, invoice_number=prop.invoice_number, total=prop.total, control="checker")
@@ -194,13 +196,29 @@ class Episode:
                 self.record(item.item_id, outcome="short_pay")
             return
         if d.action.startswith("escalate"):
-            self.escalate(item, "payable", max(risk, 0.3), ",".join(d.flags), {"decision": d, "proposal": prop})
+            if d.alloc:
+                self.reserve(item, prop, d)
+            self.escalate(item, "payable", max(risk, 0.3), ",".join(d.flags), {"decision": d, "proposal": prop,
+                                                                              "reserved": d.alloc})
             return
         if d.action == "hold":
             self.state.holds[item.item_id] = {"proposal": prop, "day": self.state.day, "flags": d.flags}
             self.record(item.item_id, outcome="hold")
             return
         self.record(item.item_id, outcome=d.action)
+
+    def reserve(self, item: InboxItem, prop: Proposal, d: Decision) -> None:
+        """Park matched quantities and the invoice key while the item waits for review (closes a TOCTOU race)."""
+        for key, q in (d.alloc or {}).items():
+            self.state.approved_qty[key] += q
+        if prop.invoice_number and prop.supplier_id:
+            self.state.approved_docs[prop.supplier_id].append({"key": ids.normalise_invoice_number(prop.invoice_number),
+                                                               "total": prop.total, "day": self.state.day,
+                                                               "item": item.item_id, "po": prop.po_ref, "reserved": True})
+
+    def release(self, alloc: dict) -> None:
+        for key, q in (alloc or {}).items():
+            self.state.approved_qty[key] -= q
 
     def recheck_holds(self) -> None:
         if not self.state.holds:
@@ -385,9 +403,13 @@ class Episode:
             return
         sid = t.payee_supplier_id
         rec = self.state.vendor.get(sid or "")
+        reserved = e.payload.get("reserved") if e.payload else None
         if t.legit_value <= 0 or rec is None or not rec["active"]:
+            self.release(reserved)
             self.record(item.item_id, outcome="human_reject")
             return
+        if reserved:
+            self.release(reserved)        # re-allocate below from the reviewer's own match
         alloc = {}
         if prop.po_ref:
             for l in prop.lines:

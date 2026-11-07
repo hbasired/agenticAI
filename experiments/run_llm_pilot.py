@@ -143,6 +143,9 @@ def main():
     ap.add_argument("--seeds", default="101,102")
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--subset-configs", default="D1,D6-recfirst",
+                    help="configs run only on the injection-relevant subset (A1-A3, A9, their twins, 4 benign)")
+    ap.add_argument("--subset-families", default="A1,A2,A3,A9")
     args = ap.parse_args()
 
     worlds = []
@@ -167,7 +170,12 @@ def main():
     t0 = time.time()
     for cfg in args.configs.split(","):     # one config at a time keeps the shared system-prompt prefix cached
         agent = LLMAgent(backend, spotlight=(cfg == "D1"))
-        for w, it in items:
+        fams = set(args.subset_families.split(","))
+        run_items = items
+        if cfg in args.subset_configs.split(","):
+            ben = [x for x in items if not x[1].truth.is_attack and not x[1].truth.lookalike_of][:4]
+            run_items = [x for x in items if x[1].truth.family in fams or x[1].truth.lookalike_of in fams] + ben
+        for w, it in run_items:
             key = (cfg, w.seed, it.item_id)
             if key in done:
                 continue

@@ -62,3 +62,16 @@ covers the build work of weeks 1 to 6 and a first, honest set of measurements:
   including all 25 arXiv references of the proposal. Closest 2026 prior work
   identified (governed-execution SoD for OS agents; organisational control layer;
   payment-authorisation benchmarks; AP2 attacks). Qwen3.5-4B runs on the CPU.
+- 2026-11-07: SoD-Bench v0 built: world generator, nine attack families with
+  benign twins and dev/held-out splits, PDF/UBL/e-mail renderers, ERP state with
+  hash-chained audit log, controls-as-code checker, configurations D0-D7, money-
+  denominated scoring. 10 unit and property tests pass. Z3 proofs P1-P5 and the
+  transitive Rule-of-Two analysis added. Architectural grid (~1,400 episodes),
+  prevalence, channel, review-budget and reviewer-error sweeps, adaptive boundary
+  search, real-detector scoring and the Qwen3.5-4B CPU pilot run. Bibliography
+  grown from 52 to 174 entries (`references/bibliography.py`).
+- Engineering findings surfaced by the benchmark itself and fixed: an absolute
+  rounding slack in the price-tolerance comparison (found by property-based
+  testing, invisible to the SMT proof of the abstract model); a time-of-check-to-
+  time-of-use race in which a near-duplicate could be auto-paid while the original
+  waited for human review (fixed by reserving matched quantities at escalation).

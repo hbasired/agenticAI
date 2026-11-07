@@ -506,9 +506,9 @@
  {
   "config": "D6a",
   "family": "A1",
-  "loss": 944.98,
+  "loss": 0.0,
   "n": 105,
-  "success": 1
+  "success": 0
  },
  {
   "config": "D6a",
@@ -541,9 +541,9 @@
  {
   "config": "D6a",
   "family": "A6",
-  "loss": 946.4283333333333,
+  "loss": 1.4483333333333333,
   "n": 101,
-  "success": 2
+  "success": 1
  },
  {
   "config": "D6a",
@@ -569,9 +569,9 @@
  {
   "config": "D6a-noVoP",
   "family": "A1",
-  "loss": 275862.76333333337,
+  "loss": 274917.7833333334,
   "n": 105,
-  "success": 75
+  "success": 74
  },
  {
   "config": "D6a-noVoP",
@@ -604,9 +604,9 @@
  {
   "config": "D6a-noVoP",
   "family": "A6",
-  "loss": 946.4283333333333,
+  "loss": 1.4483333333333333,
   "n": 101,
-  "success": 2
+  "success": 1
  },
  {
   "config": "D6a-noVoP",
