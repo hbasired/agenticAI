@@ -85,3 +85,30 @@ change, and the checker held the payment.
 * A real prompt-injection classifier's recall depends on scanning granularity
   (context dilution): 25 % / 69 % / 94 % recall at 512 / 128 / 64-token windows, with
   0 % / 0 % / 40 % false positives on benign twins.
+
+## 9. Pre-registered benchmark campaign (fresh held-out worlds 2001-2010)
+Targets and protocol: `docs/benchmarks.md` (committed before the campaign). Condition: 10 % of
+suppliers bill an agreed surcharge, 3 % attack prevalence, review budget 5 %, s in {0, 0.25, 0.5, 1}.
+
+| Target | v0.1 (2 % tolerance) | v0.2 (PO price, all variances to buyer) | v0.3 (vendor tolerance groups + UBL by code) |
+|---|---|---|---|
+| H1 | pass | pass | pass |
+| H2_CGA | pass | pass | pass |
+| H3 | pass | pass | pass |
+| H4 | pass | pass | pass |
+| X1 | pass | pass | pass |
+| X2 | pass | FAIL | pass |
+| X3 | FAIL | pass | pass |
+| X4 | pass | pass | pass |
+| X5 | pass | pass | pass |
+| O1 | pass | FAIL | pass |
+| O2 | pass | FAIL | pass |
+| O3 | pass | FAIL | pass |
+| O4 | pass | pass | pass |
+| O5 | pass | pass | pass |
+| O6 | pass | FAIL | pass |
+
+v0.3 passes all targets. Adaptive success share 0.017 when the attacker cannot pick
+the compromised supplier, 0.108 when it knows the tolerance groups (both <= 10 %).
+On development worlds v0.3 missed H4 (residual split between a near-duplicate and an inflated invoice on one PO).
+External targets X1-X5 come from other benchmarks and are indicative only.
