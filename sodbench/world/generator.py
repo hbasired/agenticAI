@@ -304,7 +304,8 @@ def generate_world(cfg: WorldConfig) -> World:
             receipts.append(grn)
             # The invoice normally follows the receipt; ~6% arrive one or two days before it.
             iday = dday + (rng.randint(0, 6) if rng.random() > 0.06 else -rng.randint(1, 2))
-            if 0 <= iday < cfg.n_days:
+            # pre-receipt invoices only when the goods do arrive inside the evaluation period
+            if 0 <= iday < cfg.n_days and (iday >= dday or dday < cfg.n_days):
                 dlines = [DocLine(ln, po.line(ln).description, q, po.price(ln), po.line(ln).uom)
                           for ln, q in qty.items() if q > 0]
                 notes = []
@@ -314,13 +315,14 @@ def generate_world(cfg: WorldConfig) -> World:
                 truth = GroundTruth(payee_supplier_id=s.supplier_id, legit_value=doc.total,
                                     expected_action="pay", split=cfg.split)
                 deliver(doc, s, iday, "invoice", truth)
-                if pattern == "return" and dday + 3 < cfg.n_days:
+                rday = max(iday + 1, dday + rng.randint(2, 6))
+                if pattern == "return" and rday <= cfg.n_days - 2:
+                    # returns follow the invoice; the supplier always issues a credit note for them
                     rline = lines[0]
                     rq = max(1.0, math.floor(rline.qty * rng.uniform(0.05, 0.2)))
-                    rday = min(cfg.n_days - 1, dday + rng.randint(2, 6))
                     receipts.append(GoodsReceipt(ctr.next("GRN", 6), po.po_id, rday, {rline.line_no: -rq}))
                     cday = min(cfg.n_days - 1, rday + rng.randint(0, 2))
-                    if cday >= iday:
+                    if True:
                         cn = make_doc(s, "credit_note", cday, po.po_id,
                                       [DocLine(rline.line_no, f"Return: {rline.description}", rq, po.price(rline.line_no), rline.uom)],
                                       billing_ref=doc.invoice_number)

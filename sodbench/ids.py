@@ -61,19 +61,18 @@ def normalise_iban(text: str) -> str:
     return re.sub(r"[^A-Z0-9]", "", (text or "").upper())
 
 
-IBAN_PATTERN = re.compile(r"\b([A-Z]{2}\d{2}(?:\s?[A-Z0-9]{4}){3,7}(?:\s?[A-Z0-9]{1,3})?)\b")
+IBAN_LENGTHS = {"AE": 23, "GB": 22, "DE": 22, "FR": 27, "NL": 18, "SA": 24, "BH": 22, "QA": 29, "KW": 30}
+IBAN_PATTERN = re.compile(r"(?<![A-Z0-9])((?:%s)\d{2}(?:[ ]?[A-Z0-9]{2,4}){3,8})" % "|".join(IBAN_LENGTHS))
 
 
 def find_ibans(text: str) -> list[str]:
-    """Return all checksum-valid IBANs mentioned in free text (normalised)."""
+    """Return checksum-valid IBANs of known countries and exact national length found in free text."""
     out = []
     for m in IBAN_PATTERN.finditer((text or "").upper()):
         cand = normalise_iban(m.group(1))
-        # try progressively shorter prefixes: free text may run digits together
-        for length in range(len(cand), 14, -1):
-            if iban_is_valid(cand[:length]):
-                out.append(cand[:length])
-                break
+        exact = IBAN_LENGTHS[cand[:2]]
+        if len(cand) >= exact and iban_is_valid(cand[:exact]):
+            out.append(cand[:exact])
     return out
 
 
