@@ -109,6 +109,6 @@ suppliers bill an agreed surcharge, 3 % attack prevalence, review budget 5 %, s 
 | O6 | pass | FAIL | pass |
 
 v0.3 passes all targets. Adaptive success share 0.017 when the attacker cannot pick
-the compromised supplier, 0.108 when it knows the tolerance groups (both <= 10 %).
+the compromised supplier, 0.108 when it knows the tolerance groups. The first meets the 10 % target; the second narrowly misses it (10.8 %), so the X3 pass holds only if tolerance-group membership stays confidential.
 On development worlds v0.3 missed H4 (residual split between a near-duplicate and an inflated invoice on one PO).
 External targets X1-X5 come from other benchmarks and are indicative only.

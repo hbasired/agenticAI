@@ -311,17 +311,22 @@ def _benchmark_outcomes(R, V):
         elif key in ("H1",):
             txt = pct(v, 2)
         elif key in ("X2",):
-            txt = f"{v:.1f} pp"
+            txt = f"{v:+.2f} pp"
         elif key in ("O4",):
             txt = aed(v)
         elif key in ("O5",):
             txt = f"{100 * v:.4f} %"
         else:
             txt = pct(v, 1)
-        return ("pass" if b.get("pass") else "FAIL") + (f" ({txt})" if txt else "")
+        cellv = ("pass" if b.get("pass") else "FAIL") + (f" ({txt})" if txt else "")
+        if key == "X3" and isinstance(v, dict):
+            cellv = (("pass" if b.get("pass") else "FAIL") + f" ({pct(v.get('attacker_cannot_pick_supplier'))}); "
+                     + ("white-box pass" if b.get("pass_whitebox") else "white-box FAIL")
+                     + f" ({pct(v.get('attacker_knows_tolerance_groups'))})")
+        return cellv
     keys = [("H1", "DV cut >= 90 %, STP cost <= 10 pp"), ("H2_CGA", "CGA keeps reduction under adaptive attack"),
             ("H3", "Channel effects as predicted"), ("H4", "Residual in A7/A8, no diversion"),
-            ("X1", "Injection ASR <= 1.75 %"), ("X2", "STP cost <= 7 pp"), ("X3", "Adaptive success <= 10 %"),
+            ("X1", "Injection ASR <= 1.75 %"), ("X2", "STP cost <= 7 pp"), ("X3", "Adaptive success <= 10 % (blind; white-box)"),
             ("X4", "Overall ASR <= 6.7 %"), ("X5", "Resistance >= 65 %"), ("O1", "FHR <= 2 %"), ("O2", "STP >= 95 %"),
             ("O3", "Reviews <= 5 % of inbox"), ("O4", "Weekly DVaR95 = 0"), ("O5", "Residual <= 0.01 %"),
             ("O6", "Twin FHR <= 5 %")]
@@ -331,11 +336,14 @@ def _benchmark_outcomes(R, V):
             "Every evaluation and its conditions are in results/benchmark_ledger.csv.", label="tab:bench")
     v3 = B.get("v0.3_heldout_noise0.1", {})
     x3 = v3.get("X3", {}).get("value", {})
-    R.para(f"v0.3 meets every pre-registered target on the held-out worlds. Two conditions qualify this. First, the "
-           f"adaptive success share is {pct(x3.get('attacker_cannot_pick_supplier'))} when the attacker cannot choose which "
-           f"supplier it compromises and {pct(x3.get('attacker_knows_tolerance_groups'))} when it knows the tolerance groups "
-           f"and targets surcharge suppliers, so tolerance-group membership should be treated as confidential master data. "
-           f"Second, the external targets X1-X5 come from other benchmarks and are indicative only. On the development "
+    wb = x3.get('attacker_knows_tolerance_groups') or 0.0
+    R.para(f"v0.3 meets every pre-registered target on the held-out worlds under the stated conditions, and three "
+           f"qualifications apply. First, X3 is met when the attacker cannot choose which supplier it compromises "
+           f"(adaptive success share {pct(x3.get('attacker_cannot_pick_supplier'))}), but it is "
+           f"{'narrowly missed' if wb > 0.10 else 'also met'} when the attacker knows the tolerance groups and targets "
+           f"surcharge suppliers ({pct(wb)} against the 10 % target), so tolerance-group membership must be treated as "
+           f"confidential master data and the X3 pass holds only under that condition. "
+           f"Second, the external targets X1-X5 come from other benchmarks and are indicative only. Third, on the development "
            f"worlds v0.3 missed H4, because its tiny residual was split between a near-duplicate and an inflated invoice on "
            f"the same purchase order; on held-out worlds H4 passed. We report both, and we have not yet isolated which of "
            f"the two payments exceeded entitlement in the development case.")
