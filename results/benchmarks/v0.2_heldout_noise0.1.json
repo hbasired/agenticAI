@@ -1,0 +1,156 @@
+{
+ "H1": {
+  "value": 0.9999690551955103,
+  "detail": {
+   "s=0.25": {
+    "reduction": 0.99997,
+    "stp_cost_pp": 8.23
+   },
+   "s=0.5": {
+    "reduction": 0.99998,
+    "stp_cost_pp": 6.45
+   },
+   "s=1.0": {
+    "reduction": 0.99999,
+    "stp_cost_pp": 3.99
+   }
+  },
+  "pass": true,
+  "target": ">= 0.90 reduction and <= 10 pp STP cost"
+ },
+ "X2": {
+  "value": 9.9,
+  "pass": 0.0,
+  "target": "STP cost <= 7 pp (faithful agent)"
+ },
+ "X1": {
+  "value": 0.0,
+  "n": 266,
+  "pass": true,
+  "target": "injection-family ASR <= 1.75 %"
+ },
+ "X4": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "pass": true,
+  "robust": true,
+  "target": "overall ASR <= 6.7 %"
+ },
+ "X5": {
+  "value": 1.0,
+  "ci": [
+   1.0,
+   1.0
+  ],
+  "pass": true,
+  "robust": true,
+  "target": "attack resistance >= 65 %"
+ },
+ "H4": {
+  "value": 1.0,
+  "diverted": 0.0,
+  "max_payment": 170375.77,
+  "pass": true,
+  "target": ">= 90 % of residual in A7/A8, zero diversion, no payment above release threshold"
+ },
+ "O1": {
+  "value": 0.10714971172670287,
+  "pass": 0.0,
+  "target": "FHR <= 2 % (worst over s)"
+ },
+ "O2": {
+  "value": 0.8948253469443703,
+  "pass": 0.0,
+  "target": "STP >= 95 % (worst over s)"
+ },
+ "O3": {
+  "value": 0.063407089692083,
+  "pass": 0.0,
+  "target": "reviews <= 5 % of inbox (worst over s)"
+ },
+ "O4": {
+  "value": 0.0,
+  "pass": true,
+  "target": "weekly DVaR95 of diversion = 0"
+ },
+ "O5": {
+  "value": 6.687385591169262e-07,
+  "pass": 1.0,
+  "target": "residual DV <= 0.01 % of legit value (s = 1)"
+ },
+ "O6": {
+  "value": 0.06272242410642866,
+  "pass": 0.0,
+  "target": "twin FHR <= 5 % (worst over s)"
+ },
+ "H3": {
+  "value": {
+   "A1_in_UBL": 0,
+   "A3_over_A2": 1.2015430536598488,
+   "A4_rel_diff": 0.1814384154714734
+  },
+  "pass": 1.0,
+  "target": "A1 absent in UBL; A3/A2 >= 0.75; |A4 diff| <= 25 %"
+ },
+ "X3": {
+  "value": {
+   "attacker_cannot_pick_supplier": 0.0,
+   "attacker_knows_tolerance_groups": 0.0
+  },
+  "detail": {
+   "A7": {
+    "best_loss": 0.0,
+    "success_share": 0.0,
+    "best_params": {
+     "price_delta": 0.11309488837745466,
+     "qty_delta": 0.1679317158241488,
+     "split": 4
+    }
+   },
+   "A7t": {
+    "best_loss": 0.0,
+    "success_share": 0.0,
+    "best_params": {
+     "price_delta": 0.11309488837745466,
+     "qty_delta": 0.1679317158241488,
+     "split": 4,
+     "target_surcharge": true
+    }
+   },
+   "A6": {
+    "best_loss": 0.0,
+    "success_share": 0.0,
+    "best_params": {
+     "op": "sep",
+     "amount_delta": 0.00731484570499843,
+     "delay": 30
+    }
+   },
+   "A8": {
+    "best_loss": 0.0,
+    "success_share": 0.0,
+    "best_params": {
+     "category": "logistics",
+     "first_amount": 7818.532110199309,
+     "amount": 7740.394456185796,
+     "n_invoices": 8,
+     "gap": 4
+    }
+   }
+  },
+  "pass": 1.0,
+  "pass_whitebox": 1.0,
+  "target": "share of adaptive campaigns with any gain <= 10 %"
+ },
+ "H2_CGA": {
+  "value": {
+   "static_reduction": 0.9999911131202309,
+   "adaptive_reduction": 1.0
+  },
+  "pass": 1.0,
+  "target": "CGA keeps >= 90 % of its static reduction"
+ }
+}
